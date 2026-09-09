@@ -189,6 +189,13 @@ nav.main a:not(.btn){color:var(--ink);text-decoration:none;font:500 .9375rem/1 v
    Measured across 53 frames of the recoloured clip: in the resting state the visitor reads on
    a #B8F6F1 wall - ink 12.01:1 and the body colour 7.22:1, no scrim needed. The arm crosses
    the copy zone mid-clip, but the wipe is behind the roller, so nothing is ever read over it. */
+/* The painted still sits behind the video as the hero's own ground. The graded footage
+   starts on a WHITE wall, which is the point - the copy only reads once the roller has
+   been over it - but that also means frame zero cannot carry white type. Anywhere the
+   video is not playing (reduced motion, a blocked codec, a failed request, the moment
+   before it decodes) this ground is what the copy sits on, and white measures 4.86:1 on
+   its worst patch. */
+.hero{background:#0F3E6E url("banner-white-poster.jpg") center/cover no-repeat}
 .hero{position:relative;min-height:clamp(620px,88vh,1020px);display:flex;align-items:center;
   overflow:hidden;background:var(--ground)}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
@@ -416,6 +423,8 @@ html.paint-anim .hero .wrap{clip-path:inset(0 var(--wipe,0%) 0 0)}
 @media (hover:hover) and (pointer:fine){
   .area-grid a:not(.btn):hover{transform:translateY(-2px);filter:brightness(1.05);
     box-shadow:0 8px 20px rgba(27,36,48,.13)}}
+/* Reduced motion gets the painted still, not a paused white wall */
+@media (prefers-reduced-motion:reduce){.hero-video{display:none}}
 @media (prefers-reduced-motion:reduce){
   .area-grid a:not(.btn):hover{transform:none}}
 .hoods{margin-top:24px;color:var(--muted);font-size:1rem}
@@ -848,8 +857,8 @@ footer.site .wrap{position:relative;z-index:1}
 
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <video id="heroVid" class="hero-video" src="banner-paint-blue.mp4"
-         poster="banner-paint-blue-poster.jpg" width="1920" height="1080"
+  <video id="heroVid" class="hero-video" src="banner-white.mp4"
+         poster="banner-white-poster.jpg" width="1920" height="1080"
          autoplay muted playsinline preload="auto"
          aria-label="A roller laying deep blue paint across a wall"></video>
   <div class="wrap">
