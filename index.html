@@ -202,7 +202,22 @@ nav.main a:not(.btn){color:var(--ink);text-decoration:none;font:500 .9375rem/1 v
    visible - this reveal has hidden real content twice already on this build (L-112).
    It runs on the whole banner row, so the chips on the right are uncovered last, as the
    roller reaches them. */
+/* The paint reveal. --wipe is the share of the hero still UNPAINTED, counted from the
+   right, and it is set on the root because a custom property inherits downward only - it
+   used to be set on .hero-card, which sits INSIDE .wrap, so .wrap read the 0% fallback and
+   the reveal never ran at all.
+
+   Two layers driven by the one number: the content is clipped to the painted part, and a
+   white sheet covers the part still unpainted. The wall in the footage is a flat neutral
+   grey, so without the sheet the banner reads as a grey wall with white type on it; with
+   it, the banner starts blank and every element - copy, buttons, ticks and the six colour
+   cards - arrives as the roller reaches it. */
 html.paint-anim .hero .wrap{clip-path:inset(0 var(--wipe,0%) 0 0)}
+html.paint-anim .hero::after{content:"";position:absolute;inset:-1px;z-index:1;
+  background:#fff;pointer-events:none;
+  clip-path:inset(0 0 0 calc(100% - var(--wipe,0%)))}
+html.paint-anim .hero-video{z-index:0}
+html.paint-anim .hero .wrap{z-index:2}
 
 /* ---------- paint chips: the right half was empty wall ----------
    The six named colours from the service cards, laid on the wall like chips off a fan deck.
@@ -1325,7 +1340,7 @@ footer.site .wrap{position:relative;z-index:1}
     if(done) return;
     done = true;
     root.classList.remove('paint-anim');
-    card.style.removeProperty('--wipe');
+    root.style.removeProperty('--wipe');
   }
 
   if(matchMedia('(prefers-reduced-motion: reduce)').matches){
@@ -1334,17 +1349,31 @@ footer.site .wrap{position:relative;z-index:1}
     return;                                  // copy stays plainly visible
   }
 
-  root.classList.add('paint-anim');
-  card.style.setProperty('--wipe','100%');
+  // Arm ONLY once the video is genuinely playing. The sheet hides the whole banner, so
+  // arming it on load would leave a blank hero for anyone whose video never starts - a
+  // blocked codec, a data saver, a failed request. No playback, no effect, hero visible.
+  var armed = false;
+  function arm(){
+    if(armed || done) return;
+    if(v.readyState < 2 || v.paused) return;
+    armed = true;
+    root.classList.add('paint-anim');
+    root.style.setProperty('--wipe','100%');
+  }
+  v.addEventListener('playing', arm);
+  v.addEventListener('timeupdate', arm);
+  // if it has not started within 2s, leave the banner alone
+  setTimeout(function(){ if(!armed) finish(); }, 2000);
 
   v.addEventListener('timeupdate', function(){
     if(done) return;
     var d = v.duration;
     if(!d) return;
     // the copy finishes appearing a little before the roller leaves frame
+    if(!armed) return;
     var p = v.currentTime / (d * 0.82);
     if(p > 1) p = 1;
-    card.style.setProperty('--wipe', ((1 - p) * 100).toFixed(1) + '%');
+    root.style.setProperty('--wipe', ((1 - p) * 100).toFixed(1) + '%');
     if(p >= 1) finish();
   });
 
