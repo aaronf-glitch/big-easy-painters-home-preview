@@ -37,13 +37,18 @@
   /* darker inks used only for TEXT sitting on its own tint - the card fills stay bright */
   /* stale duplicates removed - these were set against the OLD tints and were winning
      over the recomputed inks two lines above, holding the Services chip at 3.95:1. */
-  --wrap:1360px; --r:16px;
+  --wrap:1480px; --r:17px;
   --shadow:0 1px 2px rgba(27,36,48,.04), 0 10px 30px rgba(27,36,48,.07);
   --display:Poppins, ui-sans-serif, system-ui, "Segoe UI", sans-serif;
   --body:Inter, ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+/* Ron was reading the page at 110% browser zoom, which is the page telling you it is set
+   too small. Every size on this build is in rem, so the root carries all of it: type,
+   spacing and the clamped headings scale together from one number. The container and its
+   gutter go up with it, because browser zoom scales px too and leaving them fixed would
+   have made the lines short instead of the page bigger. */
+html{scroll-behavior:smooth;font-size:110%}
 [id]{scroll-margin-top:104px}
 body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);
   font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
@@ -53,7 +58,7 @@ h1{font-size:clamp(2.1rem,1.2rem + 2.9vw,3.7rem);font-weight:700}
 h2{font-size:clamp(1.7rem,1.15rem + 1.9vw,2.65rem);font-weight:700}
 h3{font-size:1.1875rem;font-weight:600}
 p{margin:0 0 1rem}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 31px}
 .sec{padding:clamp(52px,5.4vw,88px) 0;position:relative}
 /* ---------- the roof stripe at every section join ----------
    Ron liked it on the footer and asked for it on all of them. It is the logo's own roof
