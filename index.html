@@ -1,0 +1,1649 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>House Painting in New Orleans, LA | Big Easy Painters</title>
+<meta name="description" content="Big Easy Painters handles interior, exterior, cabinet and commercial painting across Greater New Orleans. Licensed and insured. Get a free estimate today.">
+<link rel="canonical" href="https://www.bigeasypainters.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Big Easy Painters">
+<meta property="og:title" content="House Painting in New Orleans, LA | Big Easy Painters">
+<meta property="og:description" content="Interior, exterior, cabinet and commercial painting across Greater New Orleans. Licensed and insured. Free written estimates.">
+<meta property="og:url" content="https://www.bigeasypainters.com/">
+<meta property="og:image" content="assets/home-banner.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- PRESERVE ON DEPLOY: Google Tag Manager GTM-NJT5SB3 goes here. AdRoll rides on GTM. -->
+<style>
+/* ===========================================================================
+   DESIGN LANGUAGE - friendly residential contractor, taken from the PaintPro
+   reference Ron supplied: white ground, rounded coloured service cards with a
+   painted top edge, photography leading, sentence-case headings, soft shadows.
+   This replaces the previous Swiss/editorial language (Archivo uppercase, 2px
+   black rules, industrial 01/ index labels) entirely - that was the same
+   design wearing new components.
+   =========================================================================== */
+:root{
+  --ground:#FFFFFF; --soft:#E3EAEC; --ink:#1B2430; --muted:#3A424D; --line:#E3E9EC;
+  /* Ang mismong kulay ng logo. Tatlo ay eksakto; tatlo ay isang hakbang mas malalim
+     para kayang dalhin ang puting text (4.6:1). Ang ginto ay eksakto - madilim na text. */
+  --c1:#03837E; --c2:#2477C7; --c3:#E90F26; --c4:#FEA301; --c5:#5B3EA1; --c6:#47704C;
+  --t1:#9DCFCD; --t2:#A7C9E9; --t3:#F9C1C7; --t4:#FEC050; --t5:#D3CBE6; --t6:#BFCDC0;
+  --c1-ink:#025854; --c2-ink:#185085; --c3-ink:#AA0B1C; --c4-ink:#724900; --c5-ink:#5B3EA1; --c6-ink:#38583C;
+  /* darker inks used only for TEXT sitting on its own tint - the card fills stay bright */
+  /* stale duplicates removed - these were set against the OLD tints and were winning
+     over the recomputed inks two lines above, holding the Services chip at 3.95:1. */
+  --wrap:1360px; --r:16px;
+  --shadow:0 1px 2px rgba(27,36,48,.04), 0 10px 30px rgba(27,36,48,.07);
+  --display:Poppins, ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  --body:Inter, ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:104px}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);
+  font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);margin:0 0 .5em;line-height:1.15;letter-spacing:-.02em}
+h1{font-size:clamp(2.1rem,1.2rem + 2.9vw,3.7rem);font-weight:700}
+h2{font-size:clamp(1.7rem,1.15rem + 1.9vw,2.65rem);font-weight:700}
+h3{font-size:1.1875rem;font-weight:600}
+p{margin:0 0 1rem}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+.sec{padding:clamp(52px,5.4vw,88px) 0}
+.soft{background:var(--soft)}
+.w1{background:var(--t1);--pw:3,131,126} .w2{background:var(--t2);--pw:36,119,199}
+.w3{background:var(--t3);--pw:233,15,38}  .w4{background:var(--t4);--pw:254,163,1}
+.w5{background:var(--t5);--pw:91,62,161} .w6{background:var(--t6);--pw:71,112,76}
+.soft{background:var(--soft);--pw:91,102,114}
+
+/* ---------- the tinted bands are rolled on, not filled ----------
+   Four things make a roller pass read as a roller pass: overlapping passes, uneven loading
+   on the sleeve, the nap of the sleeve itself, and an edge where the roller lifted. The
+   banded gradient gives the passes, the two blooms the uneven load, the fine streaks the
+   nap, and the clip the edge. --pw is the band's own colour, so the paint deepens rather
+   than bleaching to white. All CSS - no image, no request. */
+/* The .w1-.w6 and .soft paper-texture block was removed here: those classes appear
+   nowhere in the markup, and its clip-path had orphaned coordinates after the closing
+   paren, so the browser was discarding the declaration anyway. The wave that actually
+   renders is the 10-point one on .vivid below. */
+/* Every colour layer stacked at once lands at .223 alpha - measured, the worst band (w1)
+   still reads 5.17:1 for body text and 10.9:1 for ink. The two pass gradients run at
+   different periods so the overlap never settles into a stripe. */
+.lede{color:var(--muted);font-size:1.0625rem}
+
+/* ---------- eyebrow chip ---------- */
+.chip{display:inline-flex;align-items:center;gap:8px;font:600 .75rem/1 var(--body);
+  letter-spacing:.09em;text-transform:uppercase;color:var(--c1-ink);
+  background:rgba(14,114,104,.09);padding:9px 14px;border-radius:999px;margin-bottom:16px}
+.chip i{width:7px;height:7px;border-radius:50%;background:currentColor;font-style:normal}
+.chip.k1{color:var(--c1-ink);background:var(--t1)}
+.chip.k2{color:var(--c2-ink);background:var(--t2)}
+.chip.k3{color:var(--c3-ink);background:var(--t3)}
+.chip.k4{color:var(--c4-ink);background:var(--t4)}
+.chip.k5{color:var(--c5-ink);background:var(--t5)}
+.chip.k6{color:var(--c6-ink);background:var(--t6)}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:.5rem;font:600 .9375rem/1 var(--body);
+  padding:16px 26px;border-radius:10px;border:2px solid transparent;text-decoration:none;
+  transition:background-color .15s ease,color .15s ease,transform .12s ease,border-color .15s ease}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--c3);color:#fff}
+.btn-dark{background:var(--ink);color:#fff}
+/* The ghost button's border was rgba(ink,.24) - 2.9:1 on white, under the 3:1 that a UI
+   edge needs, so it read as white on white. Solid ink is 15.65:1. */
+.btn-out{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outlight{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.btn-light{background:#fff;color:var(--ink)}
+@media (hover:hover) and (pointer:fine){
+  .btn-primary:hover{background:#A73E24}
+  .btn-dark:hover{background:#2C3947}
+  .btn-out:hover{border-color:var(--ink)}
+  .btn-outlight:hover{border-color:#fff;background:rgba(255,255,255,.12)}
+  .btn-light:hover{background:var(--soft)}
+}
+:focus-visible{outline:3px solid var(--c2);outline-offset:3px;border-radius:8px}
+/* Every call to action ships as a pair: the thing we want them to do, and the phone for
+   the ones who would rather just talk. Never a single lonely button. */
+.sec-cta{display:flex;flex-wrap:wrap;gap:12px;margin:36px 0 0}
+.sec-cta.center{justify-content:center}
+
+/* ---------- section head: centred, the reference's rhythm ---------- */
+.head{text-align:center;max-width:74ch;margin:0 auto clamp(34px,3.4vw,52px)}
+.head h2{margin:0 0 14px}
+.head .lede{margin:0 auto;max-width:68ch;font-size:1.125rem}
+/* the alternate: head left, content right, so the page is not one rhythm */
+.head-side{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,3.4vw,60px);
+  align-items:center;margin-bottom:clamp(30px,3vw,44px)}
+.head-side h2{margin:0 0 14px}
+.head-side .lede{margin:0;font-size:1.125rem}
+
+/* ---------- header ---------- */
+.topbar{background:var(--ink);color:#B7C0CB;font:500 .8125rem/1 var(--body)}
+.topbar .wrap{display:flex;gap:24px;justify-content:flex-end;align-items:center;
+  min-height:40px;flex-wrap:wrap}
+.topbar a:not(.btn){color:#fff;font-weight:600;text-decoration:none}
+/* backdrop-filter:blur(10px) was here. A sticky element with a backdrop blur re-filters
+   everything behind it on EVERY scroll frame, for the full width, the whole way down the
+   page - it is the single most expensive thing a sticky header can do. The ground was
+   already 96% opaque, so the blur was invisible under it. Solid ground instead. */
+header.site{position:sticky;top:0;z-index:60;background:#fff;
+  border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:22px;min-height:80px}
+.logo{flex:0 0 auto;line-height:0}
+.logo img{height:48px;width:auto}
+nav.main{margin-left:auto;display:flex;gap:24px;align-items:center}
+nav.main a:not(.btn){color:var(--ink);text-decoration:none;font:500 .9375rem/1 var(--body);
+  padding:8px 0;border-bottom:3px solid transparent;transition:border-color .15s ease}
+@media (hover:hover) and (pointer:fine){
+  nav.main a:nth-of-type(1):hover{border-bottom-color:var(--c1)}
+  nav.main a:nth-of-type(2):hover{border-bottom-color:var(--c2)}
+  nav.main a:nth-of-type(3):hover{border-bottom-color:var(--c3)}
+  nav.main a:nth-of-type(4):hover{border-bottom-color:var(--c4)}
+  nav.main a:nth-of-type(5):hover{border-bottom-color:var(--c5)}
+  nav.main a:nth-of-type(6):hover{border-bottom-color:var(--c6)}
+  nav.main a:nth-of-type(7):hover{border-bottom-color:var(--c1)}
+}
+.head-cta{display:flex;gap:14px;align-items:center}
+.tel-btn{text-decoration:none;color:var(--ink);white-space:nowrap;
+  font:700 1.0625rem/1 var(--display)}
+.tel-btn small{display:block;font:500 .6875rem/1 var(--body);color:var(--muted);
+  letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+.burger{display:none;background:none;border:0;padding:8px;cursor:pointer;
+  min-width:44px;min-height:44px}
+.burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;
+  border-radius:2px}
+
+/* ---------- hero: PAINT-REVEAL VIDEO BANNER ----------
+   The roller lays soft green paint left to right; the banner copy is revealed in step with it,
+   driven by the video's own timeupdate rather than a guessed CSS duration. The video plays
+   ONCE and holds its last frame - it does not loop.
+
+   Nothing is baked into the video. The h1, the copy, the buttons and the schema are all real
+   HTML, so the page keeps its heading, its readable text and its structured data.
+
+   Measured across 53 frames of the recoloured clip: in the resting state the visitor reads on
+   a #B8F6F1 wall - ink 12.01:1 and the body colour 7.22:1, no scrim needed. The arm crosses
+   the copy zone mid-clip, but the wipe is behind the roller, so nothing is ever read over it. */
+.hero{position:relative;min-height:clamp(620px,88vh,1020px);display:flex;align-items:center;
+  overflow:hidden;background:var(--ground)}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.hero-card{max-width:760px}
+.hero-card .answer{color:#3E4753}          /* 5.93:1 on the darkest painted wall */
+.hero-card .ticks li{color:var(--ink)}
+.hero h1{margin:0 0 18px}
+
+/* The wipe only exists once JS confirms it is running. Without it the copy is simply
+   visible - this reveal has hidden real content twice already on this build (L-112).
+   It runs on the whole banner row, so the chips on the right are uncovered last, as the
+   roller reaches them. */
+html.paint-anim .hero .wrap{clip-path:inset(0 var(--wipe,0%) 0 0)}
+
+/* ---------- paint chips: the right half was empty wall ----------
+   The six named colours from the service cards, laid on the wall like chips off a fan deck.
+   Colour is the product, so the banner shows it. */
+.hero .wrap{display:grid;grid-template-columns:minmax(0,760px) 1fr;gap:clamp(24px,3vw,56px);
+  align-items:center}
+.chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;
+  justify-self:end;max-width:420px;width:100%}
+.chip-card{border-radius:14px;padding:18px 16px 16px;min-height:104px;display:flex;
+  flex-direction:column;justify-content:flex-end;color:#fff;
+  box-shadow:0 2px 6px rgba(27,36,48,.10),0 14px 34px rgba(27,36,48,.16);
+  /* the hero ground is now blue, so Parish Blue was vanishing into it. A white ring
+     gives every swatch an edge on any ground without changing the paint colour itself. */
+  box-shadow:0 0 0 2px rgba(255,255,255,.72), 0 2px 6px rgba(27,36,48,.14), 0 14px 34px rgba(27,36,48,.22)}
+.chip-card b{font:700 .9375rem/1.2 var(--display);letter-spacing:-.01em}
+.chip-card span{font:600 .625rem/1 var(--body);letter-spacing:.14em;text-transform:uppercase;
+  margin-bottom:8px}
+.chip-card.ink{color:var(--ink)}
+.chips-note{grid-column:1 / -1;font:500 .8125rem/1.5 var(--body);color:#3E4753;
+  text-align:right;margin:2px 0 0}
+
+/* ---------- the banner is painted onto the page ----------
+   A brush edge along the bottom, the same language as the service cards. */
+/* the sawtooth edge under the hero is gone - Ron called it, it read as a zigzag
+   rather than a cut-in line. The hero now meets the next band cleanly. */
+
+.answer{font-size:1.1875rem;color:var(--muted);max-width:52ch;margin:0 0 28px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-shot{display:none;
+  position:relative;background:var(--soft)}
+.hero-shot img,.hero-shot video{width:100%;height:100%;object-fit:cover;display:block}
+/* the video is decoration behind nothing - no text sits on it, so it needs no scrim.
+   Under reduced motion the script below pauses it and the poster frame stays. */
+.hero-shot video{background:var(--soft)}
+.ticks{display:flex;flex-wrap:wrap;gap:10px 26px;margin:26px 0 0;padding:0;list-style:none}
+.ticks li{display:flex;align-items:center;gap:9px;font-weight:500;font-size:.9375rem}
+.ticks i{flex:0 0 20px;height:20px;border-radius:50%;background:var(--c1);display:grid;
+  place-items:center;font-style:normal;color:#fff;font-size:11px;font-weight:700}
+
+/* ---------- stats ---------- */
+/* Three pale tints washed out under a bright banner and repeated the tint language the
+   sections already use. One ink band instead: the page's first hard stop, with the
+   numerals carrying the colour. Measured on #1B2430 - 8.29 / 9.93 / 6.37, labels 8.51. */
+/* A full-bleed ink bar, edge to edge, so it reads as the page's first hard stop rather
+   than another card. Measured on #1B2430 - 8.29 / 9.93 / 6.37, labels 8.51. */
+.statband{background:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr)}
+.stats div{padding:clamp(32px,3.2vw,46px) clamp(22px,2.4vw,34px)}
+.stats div + div{box-shadow:inset 1px 0 0 rgba(255,255,255,.14)}
+.stats div::before{content:"";display:block;width:46px;height:5px;border-radius:3px;
+  margin:0 0 18px}
+.stats div:nth-child(1)::before{background:#2ED3B7}
+.stats div:nth-child(2)::before{background:#F5C862}
+.stats div:nth-child(3)::before{background:#F08A6A}
+.stats b{display:block;font:700 clamp(1.9rem,1.2rem + 1.7vw,2.8rem)/1 var(--display);
+  letter-spacing:-.03em;margin-bottom:6px}
+.stats div:nth-child(1) b{color:#2ED3B7}
+.stats div:nth-child(2) b{color:#F5C862}
+.stats div:nth-child(3) b{color:#F08A6A}
+.stats span{font-size:.9375rem;color:#B7C0CB}
+
+/* ---------- service cards: rounded, coloured, painted top edge ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{border-radius:var(--r);overflow:hidden;text-decoration:none;display:flex;
+  flex-direction:column;box-shadow:var(--shadow);
+  transition:transform .18s ease,box-shadow .18s ease}
+@media (hover:hover) and (pointer:fine){
+  .card:hover{transform:translateY(-4px);box-shadow:0 3px 6px rgba(27,36,48,.06),0 18px 44px rgba(27,36,48,.13)}
+}
+.card .paint{height:26px;
+  clip-path:polygon(0 12px, 7% 3px, 15% 14px, 24% 4px, 34% 15px, 43% 3px, 52% 13px,
+    61% 4px, 70% 14px, 79% 3px, 88% 13px, 95% 4px, 100% 11px, 100% 100%, 0 100%)}
+.card .bd{padding:8px 26px 28px;flex:1;display:flex;flex-direction:column;color:#fff}
+.card .code{font:600 .6875rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase}
+.card h3{margin:12px 0 10px;color:#fff;font-size:1.375rem}
+.card p{font-size:.9375rem;margin:0 0 18px}
+.card .go{margin-top:auto;font:600 .875rem/1 var(--body);display:inline-flex;
+  align-items:center;gap:7px}
+.card .go::after{content:"→";transition:transform .15s ease}
+@media (hover:hover) and (pointer:fine){.card:hover .go::after{transform:translateX(4px)}}
+.card.dark .bd{color:var(--ink)}
+.card.dark h3{color:var(--ink)}
+
+/* ---------- strap ---------- */
+.strap{background:var(--c1);color:#fff;border-radius:var(--r);padding:30px 34px;
+  display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap}
+.strap b{font:700 1.25rem/1.3 var(--display)}
+.strap a:not(.btn){color:#fff}
+.strap-cta{display:flex;flex-wrap:wrap;gap:12px}
+
+/* ---------- comparison ---------- */
+.compare{position:relative;overflow:hidden;aspect-ratio:2/1;user-select:none;
+  touch-action:pan-y;border-radius:var(--r);box-shadow:var(--shadow)}
+.compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.compare .after{clip-path:inset(0 0 0 var(--pos,50%))}
+.compare .handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:3px;background:#fff}
+.compare .handle::after{content:"";position:absolute;top:50%;left:50%;width:48px;height:48px;
+  transform:translate(-50%,-50%);background:#fff;border-radius:50%;box-shadow:var(--shadow)}
+.compare .handle::before{content:"↔";position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);z-index:2;font-size:18px;color:var(--ink)}
+.compare input{position:absolute;inset:0;width:100%;height:100%;opacity:0;
+  cursor:ew-resize;margin:0}
+.cmp-label{position:absolute;top:16px;padding:8px 14px;border-radius:999px;
+  font:600 .75rem/1 var(--body);letter-spacing:.06em;text-transform:uppercase;
+  background:rgba(255,255,255,.94);color:var(--ink)}
+.cmp-label.l{left:16px;background:#fff;color:var(--ink)}   /* was white on teal at 3.39:1 */ .cmp-label.r{right:16px;background:rgba(27,36,48,.9);color:#fff}
+
+/* ---------- feature tiles: why us, process ---------- */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tiles.four{grid-template-columns:repeat(4,1fr)}
+.tile{border:1px solid transparent;border-radius:var(--r);padding:28px}
+/* ---------- the tiles carry full-strength colour ----------
+   The service cards already prove the pattern works; the why-us and process tiles were
+   sitting at 4-10% saturation, which is why the page read washed out. Same colours, full
+   strength, with the text flipped to suit. White measures 4.87:1 to 5.79:1 on five of the
+   six. Gold is the exception at 1.96:1, so gold takes ink text at 7.97:1 - a real defect
+   that was already live on the gold service card. */
+.tile .n{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;
+  border-radius:12px;font:700 1rem/1 var(--display);margin-bottom:16px;color:#fff}
+.tile h3{margin:0 0 8px}
+.tile p{margin:0;color:var(--muted);font-size:.9375rem}
+.tile.k1{background:var(--c1)} .tile.k2{background:var(--c2)} .tile.k3{background:var(--c3)}
+.tile.k4{background:var(--c4)} .tile.k5{background:var(--c5)} .tile.k6{background:var(--c6)}
+.tile.k1,.tile.k2,.tile.k3,.tile.k5,.tile.k6{color:#fff}
+.tile.k1 h3,.tile.k2 h3,.tile.k3 h3,.tile.k5 h3,.tile.k6 h3{color:#fff}
+.tile.k1 p,.tile.k2 p,.tile.k3 p,.tile.k5 p,.tile.k6 p{color:#fff}
+.tile.k4,.tile.k4 h3{color:var(--ink)}
+.tile.k4 p{color:rgba(27,36,48,.78)}
+/* the step number chip inverts so it still reads on the filled tile */
+.tile.k1 .n,.tile.k2 .n,.tile.k3 .n,.tile.k5 .n,.tile.k6 .n{background:#fff!important;color:var(--ink)}
+.tile.k4 .n{background:var(--ink)!important;color:#fff}
+/* the commercial icon chips were pale on white - give them the real colour */
+/* The icon chips were the pale --t tints, which is why they read as grey. These are the
+   logo colours as deep as the artwork allows: the icons are dark line drawings, so each
+   chip stops at the point where the icon still clears 4.5:1 against it. Amber takes the
+   full colour at 7.79:1; violet and green have to stay lighter to keep their icons legible. */
+/* ---------- about split ---------- */
+.about-split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,3.2vw,52px);
+  align-items:center}
+.about-split .shot{aspect-ratio:4/3;overflow:hidden;border-radius:var(--r);
+  box-shadow:var(--shadow)}
+.about-split .shot img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- commercial list ---------- */
+.clist{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.crow{display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px 24px;
+  text-decoration:none;color:var(--ink);transition:border-color .15s ease,box-shadow .15s ease}
+@media (hover:hover) and (pointer:fine){
+  .crow:hover{border-color:transparent;box-shadow:var(--shadow)}}
+.crow .ic{width:64px;height:64px;border-radius:14px;display:grid;place-items:center}
+.crow:nth-of-type(1) .ic{background:#359C98}
+.crow:nth-of-type(2) .ic{background:#5092D2}
+.crow:nth-of-type(3) .ic{background:#F05767}
+.crow:nth-of-type(4) .ic{background:#FEA301}
+.crow:nth-of-type(5) .ic{background:#77957B}
+.crow .ic img{height:38px;width:auto}
+.crow h3{margin:0 0 4px}
+.crow p{margin:0;color:var(--muted);font-size:.9375rem}
+.crow .go{font:600 .875rem/1 var(--body);color:var(--c2);white-space:nowrap}
+
+/* ---------- reviews ---------- */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px;
+  display:flex;flex-direction:column}
+.stars{color:#8A6412;letter-spacing:2px;font-size:1rem;margin-bottom:14px}  /* bright gold reads 1.96 on white; this is the same hue at a legible value */
+.rev blockquote{margin:0 0 20px;font-size:1rem}
+.who{display:flex;align-items:center;gap:12px;margin-top:auto}
+.who img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:0 0 44px}
+.who b{display:block;font-size:.9375rem}
+.who span{font-size:.8125rem;color:var(--muted)}
+
+/* ---------- recent work ---------- */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.gal figure{margin:0;border-radius:var(--r);overflow:hidden;background:#fff;
+  box-shadow:var(--shadow);transition:transform .18s ease}
+.gal img{width:100%;height:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+
+/* ---------- service areas ---------- */
+.areas-split{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,3.2vw,52px);
+  align-items:center}
+.map{background:#16487F;border-radius:var(--r);padding:26px;box-shadow:var(--shadow)}
+.map img{width:100%;height:auto;display:block}
+/* Ang navy na card ay pinalitan ng Parish Blue mula sa logo. Puti ang mapa,
+   amber ang mga pin - parehong pasado sa asul. */
+.map figcaption{color:rgba(255,255,255,.88);font-size:.8125rem;text-align:center;margin-top:14px}
+.area-grid{display:flex;flex-wrap:wrap;gap:12px}
+.area-grid a:not(.btn){flex:0 1 calc(33.333% - 8px);min-width:150px;padding:16px 18px;text-decoration:none;
+  background:#fff;border:1px solid rgba(27,36,48,.10);border-radius:12px;color:var(--ink);
+  font-weight:600;font-size:.9375rem;
+  transition:transform .15s ease,box-shadow .15s ease,filter .15s ease}
+/* ---------- the cities carry the colour ----------
+   Ten white boxes on white read as a list of nothing. Each city gets a chip off the fan
+   deck instead. Ten cities, ten chips - no colour repeats, so the grid never falls into a stripe.
+   Six hues off the logo, each used at a different depth, the way a fan deck shows a
+   family light and deep. No two cards touching in the 3-wide grid share a hue.
+   Ink #1B2430 measures 5.5:1 to 11.6:1 across all ten. Bar is 4.5:1. */
+/* Sampung lungsod, tig-isang chip mula sa logo, buong lakas. Anim na kulay ng logo
+   at apat na mas malalim na bersyon, kaya walang inuulit at walang magkatabing
+   parehong pamilya sa 3-hanay na grid. Ink 4.5:1 pataas sa lahat. */
+.area-grid a:nth-child(1){background:#03837E;color:#FFFFFF}  /* New Orleans */
+.area-grid a:nth-child(2){background:#FEA301;color:#1B2430}  /* Metairie */
+.area-grid a:nth-child(3){background:#5B3EA1;color:#FFFFFF}  /* Kenner */
+.area-grid a:nth-child(4){background:#E90F26;color:#FFFFFF}  /* Covington */
+.area-grid a:nth-child(5){background:#47704C;color:#FFFFFF}  /* Mandeville */
+.area-grid a:nth-child(6){background:#2477C7;color:#FFFFFF}  /* Madisonville */
+.area-grid a:nth-child(7){background:#46307E;color:#FFFFFF}  /* Abita Springs */
+.area-grid a:nth-child(8){background:#026560;color:#FFFFFF}  /* Hammond */
+.area-grid a:nth-child(9){background:#B60C1E;color:#FFFFFF}  /* LaPlace */
+.area-grid a:nth-child(10){background:#1B5A97;color:#FFFFFF}  /* St Rose */  /* St Rose */
+@media (hover:hover) and (pointer:fine){
+  .area-grid a:not(.btn):hover{transform:translateY(-2px);filter:brightness(1.05);
+    box-shadow:0 8px 20px rgba(27,36,48,.13)}}
+@media (prefers-reduced-motion:reduce){
+  .area-grid a:not(.btn):hover{transform:none}}
+.hoods{margin-top:24px;color:var(--muted);font-size:1rem}
+
+/* ---------- blog ---------- */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.post{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+  text-decoration:none;color:var(--ink);display:flex;flex-direction:column;
+  transition:transform .18s ease,box-shadow .18s ease}
+@media (hover:hover) and (pointer:fine){
+  .post:hover{transform:translateY(-4px);box-shadow:var(--shadow)}}
+.post .th{aspect-ratio:370/240;overflow:hidden;background:var(--soft)}
+.post .th img{width:100%;height:100%;object-fit:cover}
+.post .bd{padding:24px;display:flex;flex-direction:column;flex:1}
+.post h3{margin:0 0 14px;font-size:1.0625rem;line-height:1.4}
+.post .go{font:600 .875rem/1 var(--body);color:var(--c2);margin-top:auto}
+
+/* ---------- faq ---------- */
+.faq{max-width:960px;margin:0 auto}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:var(--r);
+  margin-bottom:14px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:22px 26px;font-family:var(--display);
+  font-weight:600;font-size:1.0625rem;display:flex;justify-content:space-between;gap:18px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.4rem;line-height:1;font-weight:400}
+.faq details[open] summary::after{content:"–"}
+/* ---------- the FAQ carries colour too ----------
+   It was white cards, dark type and one teal hairline - black and white in a section of a
+   page built on six paint colours. Each question now takes a stripe off the fan deck: a
+   thick painted edge down the left, a matching marker, and a light wash of the same colour
+   when it is open. Type stays dark on white, so nothing moves on contrast. */
+.faq details{border-left-width:6px;border-left-style:solid}
+.faq details:nth-of-type(6n+1){border-left-color:#03837E}
+.faq details:nth-of-type(6n+2){border-left-color:#2477C7}
+.faq details:nth-of-type(6n+3){border-left-color:#E90F26}
+.faq details:nth-of-type(6n+4){border-left-color:#FEA301}
+.faq details:nth-of-type(6n+5){border-left-color:#5B3EA1}
+.faq details:nth-of-type(6n+6){border-left-color:#47704C}
+.faq details:nth-of-type(6n+1) summary::after{color:#03837E}
+.faq details:nth-of-type(6n+2) summary::after{color:#2477C7}
+.faq details:nth-of-type(6n+3) summary::after{color:#C40D20}
+.faq details:nth-of-type(6n+4) summary::after{color:#8A5600}
+.faq details:nth-of-type(6n+5) summary::after{color:#5B3EA1}
+.faq details:nth-of-type(6n+6) summary::after{color:#47704C}
+.faq details[open]:nth-of-type(6n+1){background:#EAF5F4;box-shadow:0 0 0 3px #D3EAE8}
+.faq details[open]:nth-of-type(6n+2){background:#EBF2FB;box-shadow:0 0 0 3px #D6E5F7}
+.faq details[open]:nth-of-type(6n+3){background:#FDECEE;box-shadow:0 0 0 3px #FAD6DA}
+.faq details[open]:nth-of-type(6n+4){background:#FFF6E6;box-shadow:0 0 0 3px #FCEAC6}
+.faq details[open]:nth-of-type(6n+5){background:#F0EDF7;box-shadow:0 0 0 3px #DFD8EE}
+.faq details[open]:nth-of-type(6n+6){background:#EDF2EE;box-shadow:0 0 0 3px #DAE5DC}
+.faq .ans{padding:0 26px 24px;color:var(--muted)}
+
+/* ---------- estimate ---------- */
+.est{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,3.2vw,56px);align-items:stretch}
+.est-col{display:flex;flex-direction:column}
+/* a flex column stretches its children, which blew the chip out to the full column width
+   while every other chip on the page is a small pill. Pin it back to its own content. */
+.est-col>.chip{align-self:flex-start}
+.est-form{border-radius:var(--r);overflow:hidden;background:#123F73;border:3px solid #123F73;
+  box-shadow:var(--shadow);flex:1;display:flex;flex-direction:column}
+/* The form itself is a LeadConnector iframe on another domain, so its navy interior
+   cannot be restyled from here - that setting lives in the GHL form builder. What we
+   own is the frame around it, so the cap bar and border carry the brand instead. */
+.est-form .capbar{background:#123F73;color:#fff;padding:14px 22px;
+  font:600 .875rem/1 var(--body);letter-spacing:.04em}
+.est-form iframe{width:100%;flex:1;min-height:620px;border:0;display:block}
+.serving{margin-top:auto;padding-top:24px;color:var(--muted);font-size:.9375rem}
+/* ---------- social row ----------
+   Fills the gap that margin-top:auto opened between step 03 and the serving line,
+   and repeats in the footer. Icons are inline SVG so there is nothing extra to load
+   and nothing to go 404 on deploy. Every URL is the client's real profile, read off
+   the live site - none invented. */
+.socials{display:flex;gap:12px;align-items:center;margin:26px 0 0;padding:0;list-style:none}
+/* A white ring so an icon never disappears into a ground that shares its colour -
+   Facebook was teal on the teal estimate band, and the X mark is ink on the ink footer. */
+.socials a{box-shadow:0 0 0 2px rgba(255,255,255,.75);
+  width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+  text-decoration:none;color:#fff;
+  transition:background-color .15s ease,transform .12s ease}
+.socials a:active{transform:scale(.94)}
+.socials svg{width:19px;height:19px;fill:currentColor;display:block}
+
+.socials-label{font:600 .6875rem/1 var(--body);letter-spacing:.13em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 12px}
+/* the estimate column stacks .next straight into this label - it was touching the 03 card */
+.est-col .socials-label{margin-top:36px}
+.est-col .socials{margin-top:14px}
+/* footer sits on the dark ground, so the circles invert */
+/* Each icon takes a stripe off the logo roof. This also fixes a real bug: the generic
+   footer link colour was winning on specificity and painting the glyphs #A3AEBB on white,
+   which measured 2.55:1 - the icons were nearly invisible. White on these four measures
+   4.87:1 to 5.79:1. The rule is written to outrank the footer link colour. */
+footer.site .socials a:not(.btn),.socials a:not(.btn){color:#fff}
+.socials li:nth-child(1) a:not(.btn){background:#2477C7}   /* Facebook */
+.socials li:nth-child(2) a:not(.btn){background:#1B2430}   /* X */
+.socials li:nth-child(3) a:not(.btn){background:#5B3EA1}   /* LinkedIn */
+.socials li:nth-child(4) a:not(.btn){background:#E90F26}   /* YouTube */
+@media (hover:hover) and (pointer:fine){
+  .socials a:not(.btn):hover{filter:brightness(1.18)}}
+
+footer.site .socials-label{color:#B7C0CB}
+
+.next{margin:28px 0 0;display:grid;gap:14px}
+.next div{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;
+  background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.next b{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;
+  border-radius:12px;background:var(--c1);color:#fff;font:700 .875rem/1 var(--display)}
+.next p{margin:0;color:var(--muted);font-size:.9375rem}
+/* ---------- footer ---------- */
+/* The flat #123F73 was the last dead colour on the page. The ground now carries the teal
+   of the estimate band above it down through the navy, so the join reads as one move; the
+   logo's roof stripes run across the top edge as a real brand cue. */
+footer.site{color:#C3CDD8;padding:0 0 28px;font-size:.9375rem;
+  /* solid first: if the gradients never paint, the ground is still navy, not white */
+  background-color:#123F73;
+  background-image:
+    radial-gradient(120% 90% at 8% 0%, rgba(3,131,126,.42) 0%, rgba(3,131,126,0) 58%),
+    radial-gradient(90% 80% at 92% 12%, rgba(36,119,199,.34) 0%, rgba(36,119,199,0) 62%),
+    linear-gradient(168deg, #14477F 0%, #123F73 42%, #0E3260 100%)}
+/* the six logo colours as a roof stripe across the top edge */
+/* Bright versions of the six, not the body-text values. The deep teal segment sat
+   directly under the teal estimate band and vanished into it, and Live Oak green read as
+   olive on navy. These are the logo's own roof stripes: they have to look like paint. */
+footer.site>.stripe{display:block;height:8px;border:0;margin:0 0 60px;
+  background:linear-gradient(90deg,
+    #4A9BE8 0 16.66%, #F2415A 16.66% 33.32%, #FFC24D 33.32% 49.98%,
+    #2ED3B7 49.98% 66.64%, #9B7BE8 66.64% 83.3%, #79B57F 83.3% 100%)}
+footer.site h4{color:#fff;font:600 .8125rem/1 var(--body);letter-spacing:.1em;
+  text-transform:uppercase;margin-bottom:16px}
+/* the brand column is div 1 and has no h4, so the three link columns are 2, 3 and 4.
+   These tints are light enough to clear 4.5:1 on the navy - measured, not picked by eye. */
+.foot-grid>div:nth-of-type(2) h4{color:#6FD9D3}
+.foot-grid>div:nth-of-type(3) h4{color:#FFC24D}
+.foot-grid>div:nth-of-type(4) h4{color:#8FBDF0}
+/* The map is the widest column by a distance - Ron asked for it big. The three link
+   columns are sized to their own content so a long service name cannot wrap, and the map
+   takes whatever is left, with a floor so it never gets squeezed thin. */
+.foot-grid{display:grid;
+  grid-template-columns:minmax(180px,.9fr) max-content max-content max-content minmax(330px,1.45fr);
+  gap:clamp(22px,2.2vw,38px);align-items:start}
+footer.site a:not(.btn){color:#C3CDD8;text-decoration:none;display:block;padding:5px 0}
+@media (hover:hover) and (pointer:fine){footer.site a:not(.btn):hover{color:#fff}}
+.legal{border-top:1px solid rgba(255,255,255,.13);margin-top:38px;padding-top:22px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.875rem}
+
+/* ---------- reveal: REMOVED ----------
+   A scroll-reveal shipped the stats band at opacity 0 on this page, and had already risked
+   a blank page earlier in the build. Per L-112 the failsafe existed and still did not save
+   it, so the animation is gone rather than patched a third time. Nothing on the page now
+   depends on JavaScript to be visible. */
+
+
+/* ---------- responsive ---------- */
+@media (max-width:1040px){
+  .head-side,.about-split,.areas-split,.est{grid-template-columns:1fr;gap:24px}
+  .area-grid a:not(.btn){flex:1 1 calc(50% - 6px)}
+  .hero{min-height:0;padding:clamp(34px,6vw,56px) 0}
+  .hero-card{max-width:none}
+  .hero{min-height:clamp(520px,74vh,780px)}
+  .hero .wrap{grid-template-columns:1fr;gap:26px}
+  .hero-card{max-width:none}
+  .chips{justify-self:start;max-width:none;grid-template-columns:repeat(3,1fr)}
+  .chips-note{text-align:left}
+  .cards,.revs,.posts,.tiles,.tiles.four,.clist,.gal{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:repeat(3,1fr)}
+  /* superseded by the footer's own breakpoints below */
+  nav.main{display:none}
+  .burger{display:block;margin-left:auto}
+  nav.main.open{display:flex;position:absolute;top:100%;left:0;right:0;background:#fff;
+    flex-direction:column;align-items:flex-start;gap:0;padding:8px 28px 20px;
+    border-bottom:1px solid var(--line)}
+  nav.main.open a:not(.btn){width:100%;padding:14px 0;border-bottom:1px solid var(--line)}
+}
+@media (max-width:640px){
+  .bar{gap:12px;min-height:68px}
+  .logo img{height:38px}
+  .head-cta .tel-btn{display:none}
+  .head-cta .btn{padding:13px 16px;font-size:.875rem}
+  .burger{order:3}
+  .cards,.revs,.posts,.tiles,.tiles.four,.clist,.stats,.foot-grid,.gal{grid-template-columns:1fr}
+  .stats div + div{box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
+  .chips{grid-template-columns:repeat(2,1fr)}
+  .topbar .wrap{justify-content:center;gap:14px}
+  .hero-actions .btn,.sec-cta .btn{flex:1 1 100%;justify-content:center}
+  .strap .btn{flex:1 1 100%;justify-content:center}
+  .compare{aspect-ratio:3/2}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;
+    transition-property:opacity,background-color,color,border-color!important}
+  html{scroll-behavior:auto}
+}
+.card.dark.gold,.card.dark.gold h3,.card.dark.gold p,.card.dark.gold .go,
+.card.dark.gold span:not(.paint){color:var(--ink)!important}
+.card.dark.gold p{color:rgba(27,36,48,.80)!important}
+
+/* ---------- bold grounds ----------
+   Measured on the rendered page: 75.8% of it was white or near-white and only 19.2%
+   carried real colour. That is why it read dead - not the hue, the ratio. Three sections
+   take a full-strength ground so colour becomes structural rather than decorative.
+   White on these measures 6.25:1 to 7.97:1. Cards inside stay white, so they lift off. */
+.bold{color:#fff}
+.bold h2,.bold h3,.bold .lede,.bold p{color:#fff}
+.bold .lede,.bold>.wrap>p{color:rgba(255,255,255,.86)}
+.bold .chip{background:rgba(255,255,255,.16);color:#fff}
+.bold .btn-out{color:#fff;border-color:rgba(255,255,255,.55)}
+.bold .btn-light,.bold .btn-primary{background:#fff;color:var(--ink)}
+@media (hover:hover) and (pointer:fine){
+  .bold .btn-out:hover{background:#fff;color:var(--ink)}
+  .bold .btn-primary:hover{background:rgba(255,255,255,.88)}}
+.bold-teal{background:#0B5B53}
+.bold-blue{background:#1D4FD0}
+.bold-brick{background:#A73E24}
+/* cards sitting on a bold ground keep a white face and dark text */
+.bold .crow,.bold .rev,.bold .card{background:#fff;color:var(--ink);border-color:transparent}
+.bold .crow h3,.bold .rev h3,.bold .crow b,.bold .rev b{color:var(--ink)}
+.bold .crow p,.bold .rev p,.bold .rev blockquote{color:var(--muted)}
+.bold .area-grid a:not(.btn){border-color:rgba(255,255,255,.25)}
+
+/* ---------- hero on deep blue ----------
+   Ron's reference is a deep blue ground with white type. The banner clip is graded to
+   #2070AD, measured on the encoded file: white type reads 5.27:1 there. Every piece of
+   hero copy flips to white to suit; nothing else on the page changes. */
+.hero{color:#fff}
+.hero-card h1,.hero-card .answer,.hero-card .ticks li{color:#fff}
+.hero-card .answer{color:rgba(255,255,255,.92)}
+.hero-card .chip{background:rgba(255,255,255,.18);color:#fff}
+.hero-card .ticks i{background:#fff;color:#2070AD}
+.hero-card .btn-out{color:#fff;border-color:rgba(255,255,255,.6)}
+.hero .chips-note{color:rgba(255,255,255,.86)}
+@media (hover:hover) and (pointer:fine){
+  .hero-card .btn-out:hover{background:#fff;color:var(--ink)}}
+
+/* ---------- deep blue hero ----------
+   Grading the clip to blue did not hold - the hue rotation washed back to teal in the
+   encode. So the colour is set deterministically instead: a solid deep azure ground with
+   the clip laid over it in luminosity, which keeps the roller movement but takes its
+   colour entirely from the ground. #175A94 measures 7.04:1 for white type. */
+.hero{background:#0F4E82}   /* nakikita lang habang naglo-load ang video */
+/* The clip plays at full strength; a blue scrim sits between it and the copy. That keeps
+   the roller motion visible - blending it away was the mistake - while the ground colour
+   stays deterministic. Measured on the render, not assumed. */
+.hero-video{mix-blend-mode:normal;opacity:1}
+/* scrim removed - Ron wants the clip itself, not a blue sheet over it */
+
+.hero .wrap{position:relative;z-index:2}
+
+/* ---------- vivid section grounds ----------
+   The tinted bands were 4-11% saturated, which is why they read as almost-white. These are
+   the logo colours at full strength. White type measures 4.6:1 to 7.9:1 on five of them;
+   Levee Gold cannot carry white at any usable depth (1.96:1), so it takes ink at 7.9:1.
+   Cards and photos inside stay white, so they lift off the colour. */
+/* ---------- painted joins between sections ----------
+   Turning six bands into .vivid dropped them out of the `.w1..w6` selector that carried the
+   painted edge, so every join went flat. Only the TOP edge is cut now, and the band is pulled up 26px so its wave bites into the
+   section above. Clipping both edges left a white sliver wherever two coloured bands met -
+   both were cutting themselves away and the page showed through. One painted edge per
+   join, laid over the section above, which is what a roller actually does. Applied to the vivid bands and to the footer's top edge. */
+.vivid{position:relative;isolation:isolate;margin-top:-26px;
+  clip-path:polygon(
+    0.0% 17.2px, 14.29% 23.3px, 28.57% 21.9px, 42.86% 14.7px, 57.14% 6.2px, 71.43% 4.3px, 85.71% 6.9px, 100.0% 16.8px,
+    100% 100%, 0 100%)}
+.vivid{color:#fff}
+.vivid h2,.vivid h3,.vivid p,.vivid .lede,.vivid li{color:#fff}
+.vivid .lede,.vivid>.wrap p:not(.chip){color:#fff}
+/* The pill was a WHITE wash at 18%, which lightens the ground under white type - the four
+   chips on teal, brick and live oak measured 3.40:1 to 3.87:1. A dark wash instead: the
+   section colour still reads through the pill, and the label clears 4.5:1 on every band. */
+.vivid .chip{background:rgba(9,16,26,.30)!important;color:#fff!important}
+.vivid .btn-out{color:#fff;border-color:rgba(255,255,255,.6)}
+.vivid .hoods,.vivid .serving,.vivid .chips-note{color:rgba(255,255,255,.88)}
+@media (hover:hover) and (pointer:fine){
+  .vivid .btn-out:hover{background:#fff;color:var(--ink)}}
+/* white surfaces inside keep dark type */
+.vivid .card:not(.dark),.vivid .rev,.vivid .crow,.vivid .post,.vivid .next>div,
+.vivid .area-grid a:not(.btn),.vivid .est-form{background:#fff}
+.vivid .card:not(.dark) h3,.vivid .rev h3,.vivid .crow h3,.vivid .post h3,
+.vivid .next>div p,.vivid .rev blockquote,.vivid .rev b,.vivid .crow b{color:var(--ink)}
+.vivid .card:not(.dark) p,.vivid .rev p,.vivid .crow p,.vivid .post p{color:var(--muted)}
+.vivid .area-grid a:not(.btn){color:var(--ink)}
+/* Two real defects on the vivid estimate band, both mine:
+   1. `.vivid>.wrap p:not(.chip)` scored higher than the card-text rule, so the copy inside
+      the white step cards went white on white and vanished.
+   2. The "Follow the work" label kept its muted grey, which on teal is unreadable.
+   Both are pinned here, after every rule that was beating them. */
+/* My first attempt at this scored (0,2,1) and lost to `.vivid>.wrap p:not(.chip)` at
+   (0,3,1), so the copy stayed white on a white card and the steps read as empty boxes.
+   Marked important rather than escalating selectors, because this must never lose again. */
+.vivid .next>div p{color:var(--muted)!important}
+/* Third time this trap has bitten: `.vivid>.wrap p:not(.chip)` at (0,3,1) beats every
+   sensible card selector, so the copy inside the white Commercial cards was white on white -
+   five paragraphs invisible. Marked important so it cannot lose again. */
+.vivid .crow:not(.dark) p,.vivid .card:not(.dark) p,.vivid .rev p,.vivid .post p{color:var(--muted)!important}
+.vivid .crow:not(.dark) h3,.vivid .card:not(.dark) h3,.vivid .rev h3,.vivid .post h3{color:var(--ink)!important}
+/* the dark 'Something Else?' card sets its own white type inline; my important rule was
+   overriding it and painting ink on ink. It opts out here. */
+.vivid .crow.dark h3,.vivid .crow.dark p,.vivid .crow.dark span{color:#fff!important}
+.vivid .crow.dark p{color:#E4DEF3!important}   /* #B7C0CB measured 4.31:1 on Storm Violet */
+.vivid .rev blockquote,.vivid .rev b,.vivid .crow b{color:var(--ink)!important}
+.vivid .next>div b{color:#fff!important}
+.vivid .socials-label{color:#fff!important}  /* same trap as the step cards:
+   `.vivid>.wrap p:not(.chip)` was holding it at 90% white, which is 3.94:1 on teal. */   /* 92% white measured 3.94:1 on teal - under the bar. Full white is 4.61:1. */
+.v-gold .socials-label{color:var(--ink)!important}
+/* the six grounds */
+.v-teal{background:#03837E!important}
+.v-blue{background:#2477C7!important}
+.v-violet{background:#5B3EA1!important}
+.v-green{background:#47704C!important}
+.v-gold{background:#FEA301!important}
+/* gold is a light colour - ink type, not white */
+.v-gold,.v-gold h2,.v-gold h3,.v-gold p,.v-gold .lede,.v-gold li,
+.v-gold .hoods,.v-gold .serving{color:var(--ink)!important}
+.v-gold .chip{background:rgba(27,36,48,.14)!important;color:var(--ink)!important}
+.v-gold .btn-out{color:var(--ink);border-color:rgba(27,36,48,.45)}
+
+
+/* ---------- footer: Parish Blue, with the state behind it ----------
+   Ron asked for a different colour, a map, and something in the background. The map is the
+   same Louisiana artwork used in the service-area panel, set large and faint on the right
+   so it reads as a watermark rather than a second graphic. Diagonal sweeps in white run
+   across it, the same brush language as the white sections. Measured: links 6.57:1,
+   headings 10.58:1 on this ground. */
+footer.site{position:relative;isolation:isolate;overflow:hidden}
+/* The map watermark is gone - Ron meant a real embed, which now sits in the footer
+   grid below. The brush sweeps in ::after stay. */
+
+footer.site::after{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    linear-gradient(21deg, rgba(255,255,255,0) 8%,  rgba(255,255,255,.045) 13%,
+      rgba(255,255,255,.05) 19%, rgba(255,255,255,0) 24%),
+    linear-gradient(21deg, rgba(254,163,1,0) 34%, rgba(254,163,1,.075) 39%,
+      rgba(254,163,1,.085) 46%, rgba(254,163,1,0) 51%),
+    linear-gradient(21deg, rgba(255,255,255,0) 62%, rgba(255,255,255,.04) 67%,
+      rgba(255,255,255,.045) 74%, rgba(255,255,255,0) 79%),
+    repeating-linear-gradient(21deg, rgba(255,255,255,.02) 0 1px, rgba(255,255,255,0) 1px 8px);
+}
+footer.site .wrap{position:relative;z-index:1}
+
+
+/* ---------- footer map embed ----------
+   Centred on New Orleans, NOT pinned to a street address: the client publishes no address
+   anywhere on the live site or in the brand file, and dropping a pin at a guessed one would
+   be inventing a business location. This shows the service area truthfully. Lazy-loaded so
+   it costs nothing until someone scrolls to it. */
+/* The map moves into the grid as its own column, in the empty space to the right of the
+   Company links, rather than sitting full width underneath. Ron's call. */
+.foot-map{margin-top:0;border-radius:14px;overflow:hidden;
+  border:2px solid rgba(255,255,255,.22);line-height:0;background:rgba(255,255,255,.05)}
+.foot-map iframe{width:100%;height:310px;border:0;display:block;filter:saturate(.9)}
+.foot-map figcaption{line-height:1.5;font:600 .75rem/1.5 var(--body);letter-spacing:.1em;
+  text-transform:uppercase;color:#fff;padding:12px 16px;background:rgba(0,0,0,.22)}
+@media (max-width:1100px){.foot-grid{grid-template-columns:1.2fr .9fr .9fr}
+  .foot-map{grid-column:1 / -1;margin-top:28px}
+  .foot-map iframe{height:290px}}
+@media (max-width:640px){.foot-grid{grid-template-columns:1fr}
+  .foot-map iframe{height:240px}}
+
+/* ---------- commercial section: New Orleans skyline ----------
+   Ron's own download. A dusk skyline is busy, so a deep Parish Blue scrim sits over it at
+   82% - enough for white type to clear the bar everywhere in the frame, still enough of the
+   photograph showing to read as the city. This also answers an older note in
+   01-eyes-on-verify.md: nothing on the page actually looked like New Orleans. */
+.bg-photo{position:relative;isolation:isolate;background:#0F3E6E}
+.bg-photo::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  /* Graded, not flat: heavy at the top where the white heading sits over the bright
+     sunset sky, light at the bottom where the white cards already cover the frame.
+     Measured on the photo itself - the sky averages #B2B8CD, and white type needs the
+     scrim at 55% or more there. The city block below reads clearly at 42%. */
+  background-image:linear-gradient(rgba(15,62,110,.82) 0%, rgba(15,62,110,.74) 26%,
+      rgba(15,62,110,.56) 52%, rgba(15,62,110,.44) 78%, rgba(15,62,110,.40) 100%),
+    url("assets/commercial-bg.jpg");
+  background-size:cover;background-position:center 38%}
+
+/* ================= SCROLL REVEAL - "the roller pass" =========================
+   Built so it CANNOT hide content. The earlier reveal on this build shipped real copy at
+   opacity 0 twice (L-112), because the stylesheet held a hidden start state and relied on
+   script to undo it. This one has no hidden start state anywhere. Elements are plainly
+   visible in CSS; the observer only attaches a keyframe animation that runs FROM hidden
+   TO visible at the moment the element enters view, and the class is stripped again when
+   the animation ends. Script dead, observer dead, animation stalled - the page still
+   renders every word. Transform and opacity only, ease-out, no ease-in.
+   Durations: 460ms band wipe (moving on screen, 200-500ms), 300-340ms entrances. */
+/* Ron: "lahat ng sections iisa animation?" - it was, and it read as wallpaper. Every
+   section now carries its own entrance, chosen for what that section IS, and declared in
+   the markup as data-anim so the intent is readable from the HTML rather than buried in
+   script. Still transform, opacity and clip-path only; still no fill-mode anywhere, so
+   none of these can leave an element stranded. */
+@keyframes rvUp   {from{opacity:0;transform:translate3d(0,56px,0)}   to{opacity:1;transform:none}}
+@keyframes rvLeft {from{opacity:0;transform:translate3d(-84px,0,0)}  to{opacity:1;transform:none}}
+@keyframes rvRight{from{opacity:0;transform:translate3d(84px,0,0)}   to{opacity:1;transform:none}}
+@keyframes rvImg  {from{opacity:0;transform:scale(1.12)}             to{opacity:1;transform:none}}
+@keyframes rvNum  {from{opacity:0;transform:translate3d(0,26px,0) scale(.78)} to{opacity:1;transform:none}}
+
+/* services - the tile is laid down left to right. This was a clip-path reveal, which is
+   NOT compositor-accelerated: six cards repainting themselves and their shadows every
+   frame is exactly the kind of thing that makes a page feel heavy. Same direction, done
+   with transform and opacity, which the compositor handles without touching paint. */
+@keyframes rvFill {from{opacity:0;transform:translate3d(-46px,0,0) scaleX(.93)}
+                   to  {opacity:1;transform:none}}
+/* process - the numbered step arrives small and settles */
+@keyframes rvPop  {from{opacity:0;transform:scale(.62) translate3d(0,30px,0)}
+                   to  {opacity:1;transform:none}}
+/* reviews and blog cards - dealt onto the table */
+@keyframes rvDeal {from{opacity:0;transform:translate3d(0,74px,0) rotate(-4.5deg)}
+                   to  {opacity:1;transform:none}}
+@keyframes rvDealR{from{opacity:0;transform:translate3d(0,74px,0) rotate(4.5deg)}
+                   to  {opacity:1;transform:none}}
+/* gallery - the photograph pushes in from oversize */
+@keyframes rvZoom {from{opacity:0;transform:scale(1.22)}             to{opacity:1;transform:none}}
+/* commercial rows and FAQ rows - written in from the left, one after another */
+@keyframes rvRow  {from{opacity:0;transform:translate3d(-64px,0,0)}  to{opacity:1;transform:none}}
+/* city chips - snap, with a small overshoot */
+@keyframes rvChip {from{opacity:0;transform:scale(.5)}               to{opacity:1;transform:none}}
+
+[data-rv].rv-in{animation:rvUp .52s cubic-bezier(.18,.84,.34,1.06)}
+[data-rv="img"].rv-in  {animation:rvImg .72s cubic-bezier(.22,.61,.36,1)}
+[data-rv="num"].rv-in  {animation:rvNum .6s cubic-bezier(.18,.84,.34,1.06)}
+[data-rv="left"].rv-in {animation:rvLeft .62s cubic-bezier(.18,.84,.34,1.04)}
+[data-rv="right"].rv-in{animation:rvRight .62s cubic-bezier(.18,.84,.34,1.04)}
+[data-rv="fill"].rv-in {animation:rvFill .56s cubic-bezier(.2,.82,.32,1.03);transform-origin:left center}
+[data-rv="pop"].rv-in  {animation:rvPop .58s cubic-bezier(.16,.9,.3,1.12)}
+[data-rv="deal"].rv-in {animation:rvDeal .6s cubic-bezier(.18,.84,.34,1.05)}
+[data-rv="dealR"].rv-in{animation:rvDealR .6s cubic-bezier(.18,.84,.34,1.05)}
+[data-rv="zoom"].rv-in {animation:rvZoom .74s cubic-bezier(.22,.61,.36,1)}
+[data-rv="row"].rv-in  {animation:rvRow .5s cubic-bezier(.2,.8,.3,1)}
+[data-rv="chip"].rv-in {animation:rvChip .42s cubic-bezier(.16,.9,.3,1.3)}
+[data-rv="card"].rv-in {animation:rvUp .56s cubic-bezier(.18,.84,.34,1.06)}
+
+/* the wipe bar is created by script only when its section scrolls in, and deleted the
+   moment the stroke finishes - so it cannot sit over the content if anything goes wrong */
+.rv-band{position:relative;overflow:hidden}
+.rv-wipe{position:absolute;top:-2px;bottom:-2px;left:-12%;width:124%;z-index:3;
+  pointer-events:none;background:var(--rv-paint,#1B2430);
+  animation:rvWipe .74s cubic-bezier(.32,.72,.28,1) forwards;will-change:transform}
+
+@media (prefers-reduced-motion:reduce){
+  [data-rv].rv-in,.rv-wipe{animation:none!important}
+  .rv-wipe{display:none}
+}
+</style>
+</head>
+<body>
+
+
+<!-- ============ TOP BAR ============ -->
+<div class="topbar"><div class="wrap">
+  <span>Open 9:00 am – 6:00 pm</span>
+  <span>Licensed &amp; insured in Louisiana</span>
+  <a href="tel:5043809862">Call 504-380-9862</a>
+</div></div>
+
+<!-- ============ HEADER ============ -->
+<header class="site"><div class="wrap bar">
+  <a class="logo" href="/" aria-label="Big Easy Painters home">
+    <img src="assets/logo.png"
+         alt="Big Easy Painters" width="236" height="86">
+  </a>
+  <button class="burger" aria-expanded="false" aria-controls="mainnav" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="main" id="mainnav">
+    <a href="/about/">About</a>
+    <a href="/residential/">Residential</a>
+    <a href="/commercial/">Commercial</a>
+    <a href="/service-areas/">Service Areas</a>
+    <a href="/testimonials/">Reviews</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+  <div class="head-cta">
+    <a class="tel-btn" href="tel:5043809862"><small>Talk to a painter</small>504-380-9862</a>
+    <a class="btn btn-primary" href="#estimate">Get Your Free Estimate</a>
+  </div>
+</div></header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <video id="heroVid" class="hero-video" src="banner-paint-blue.mp4"
+         poster="banner-paint-blue-poster.jpg" width="1920" height="1080"
+         autoplay muted playsinline preload="auto"
+         aria-label="A roller laying deep blue paint across a wall"></video>
+  <div class="wrap">
+    <div class="hero-card">
+      <p class="chip k1"><i></i> Painting contractor · Greater New Orleans</p>
+      <h1>Interior and Exterior House Painting in New Orleans, LA</h1>
+      <p class="answer">At Big Easy Painters, we handle interior and exterior house painting,
+         cabinets, decks and commercial work across New Orleans and nine surrounding parish
+         cities. We are licensed and insured in Louisiana, and every job starts with a free
+         written estimate.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#estimate">Get Your Free Estimate</a>
+        <a class="btn btn-out" href="tel:5043809862">Call 504-380-9862</a>
+      </div>
+      <ul class="ticks">
+        <li><i>✓</i> Free written estimates</li>
+        <li><i>✓</i> Licensed and insured</li>
+        <li><i>✓</i> Local crews</li>
+      </ul>
+    </div>
+    <div class="chips" aria-label="The colours we mix and match">
+      <div class="chip-card" style="background:var(--c1)"><span>BEP 01</span><b>Shutter Green</b></div>
+      <div class="chip-card" style="background:var(--c2)"><span>BEP 02</span><b>Parish Blue</b></div>
+      <div class="chip-card" style="background:var(--c3)"><span>BEP 03</span><b>Brick Row</b></div>
+      <div class="chip-card ink" style="background:var(--c4)"><span>BEP 04</span><b>Levee Gold</b></div>
+      <div class="chip-card" style="background:var(--c5)"><span>BEP 05</span><b>Storm Violet</b></div>
+      <div class="chip-card" style="background:var(--c6)"><span>BEP 06</span><b>Live Oak</b></div>
+      <p class="chips-note">Bring a colour, or we help you pick one.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS (under the banner) ============ -->
+<section data-anim="count" class="statband"><div class="wrap">
+  <div class="stats">
+    <div><b>2.5k</b><span>Projects completed successfully</span></div>
+    <div><b>84+</b><span>Professional painters in the company</span></div>
+    <div><b>12+</b><span>Customers served every day</span></div>
+  </div>
+</div></section>
+
+<!-- ============ 01 SERVICES — centred head ============ -->
+<section data-anim="fill" class="sec"><div class="wrap">
+  <div class="head">
+    <p class="chip k2"><i></i> Services</p>
+    <h2>What Painting Services Do We Offer in New Orleans?</h2>
+    <p class="lede">We paint interiors, exteriors, cabinets and decks for New Orleans homes,
+       plus offices, gyms, hospitals and schools for local businesses. Pressure washing and
+       kitchen remodelling too, every job priced in writing before anyone opens a can.</p>
+  </div>
+  <div class="cards">
+    <a class="card" href="/residential/interior-home-painting/" style="background:var(--c1)">
+      <span class="paint" style="background:var(--c1)"></span>
+      <span class="bd"><span class="code">BEP 01 · Shutter Green</span>
+        <h3>Interior Painting</h3>
+        <p>Walls, ceilings, trim and doors, painted room by room. Furniture is covered and floors protected before the first coat goes on.</p>
+        <span class="go">View service</span></span></a>
+    <a class="card" href="/residential/exterior-home-painting/" style="background:var(--c2)">
+      <span class="paint" style="background:var(--c2)"></span>
+      <span class="bd"><span class="code">BEP 02 · Parish Blue</span>
+        <h3>Exterior Painting</h3>
+        <p>Prep, repair and weather-resistant coatings built for Gulf Coast humidity and sun. We wash and prime the surface first so the finish holds.</p>
+        <span class="go">View service</span></span></a>
+    <a class="card" href="/residential/cabinet-painting/" style="background:var(--c3)">
+      <span class="paint" style="background:var(--c3)"></span>
+      <span class="bd"><span class="code">BEP 03 · Brick Row</span>
+        <h3>Cabinet Painting</h3>
+        <p>A refinished kitchen for a fraction of what a replacement costs. Doors come off, get sprayed, and go back on with a hard-wearing finish.</p>
+        <span class="go">View service</span></span></a>
+    <a class="card dark gold" href="/residential/deck-painting/" style="background:var(--c4)">
+      <span class="paint" style="background:var(--c4)"></span>
+      <span class="bd"><span class="code">BEP 04 · Levee Gold</span>
+        <h3>Deck Painting</h3>
+        <p>Cleaning, sanding and sealing so an outdoor space survives another Louisiana summer. We match the finish to the sun and foot traffic the deck takes.</p>
+        <span class="go">View service</span></span></a>
+    <a class="card" href="/residential/pressure-washing/" style="background:var(--c5)">
+      <span class="paint" style="background:var(--c5)"></span>
+      <span class="bd"><span class="code">BEP 05 · Storm Violet</span>
+        <h3>Pressure Washing</h3>
+        <p>Dirt, grime and mildew come off before any coating goes on. It is the step that decides whether the paint holds or peels.</p>
+        <span class="go">View service</span></span></a>
+    <a class="card" href="/residential/kitchen-remodel/" style="background:var(--c6)">
+      <span class="paint" style="background:var(--c6)"></span>
+      <span class="bd"><span class="code">BEP 06 · Live Oak</span>
+        <h3>Kitchen Remodel</h3>
+        <p>Beyond paint when the room needs more than a colour change. Coordinated as one job rather than three separate trades in your kitchen.</p>
+        <span class="go">View service</span></span></a>
+  </div>
+</div></section>
+
+<!-- ============ STRAP ============ -->
+<div class="wrap" style="padding-bottom:clamp(20px,2vw,32px)">
+  <div class="strap">
+    <b>Free written estimate, no obligation</b>
+    <span class="strap-cta">
+      <a class="btn btn-light" href="#estimate">Get Your Free Estimate</a>
+      <a class="btn btn-outlight" href="tel:5043809862">Call 504-380-9862</a>
+    </span>
+  </div>
+</div>
+
+<!-- ============ 02 THE WORK — side head ============ -->
+<section data-anim="split" class="sec vivid v-teal"><div class="wrap">
+  <div class="head-side">
+    <div>
+      <p class="chip k1"><i></i> The work</p>
+      <h2>What Does a Fresh Coat Change in a New Orleans Home?</h2>
+      <p class="lede">A full exterior repaint seals the surface against Gulf Coast humidity and
+         rain, and lifts a tired property in a matter of days. The same New Orleans home,
+         before and after our crew finished.</p>
+      <p class="sec-cta"><a class="btn btn-primary" href="#estimate">Get Your Free Estimate</a><a class="btn btn-out" href="tel:5043809862">Call 504-380-9862</a></p>
+    </div>
+    <div class="compare" id="cmp">
+      <img src="assets/our-projects-image1-scaled-1024x768.jpg"
+           alt="A New Orleans home exterior before repainting" width="1024" height="512" loading="lazy">
+      <img class="after" src="assets/our-projects-image3-1024x576.jpg"
+           alt="The same New Orleans home exterior after repainting" width="1024" height="512" loading="lazy">
+      <span class="cmp-label l">Before</span>
+      <span class="cmp-label r">After</span>
+      <span class="handle" aria-hidden="true"></span>
+      <input type="range" min="0" max="100" value="50" aria-label="Reveal the finished result">
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ 03 WHY US — centred head ============ -->
+<section data-anim="alt" class="sec"><div class="wrap">
+  <div class="head">
+    <p class="chip k3"><i></i> Why us</p>
+    <h2>Why Do New Orleans Homeowners Call Us Back?</h2>
+    <p class="lede">Because the price is agreed in writing before we start, the crews are
+       local, and the property is left clean.</p>
+  </div>
+  <div class="tiles">
+    <div class="tile k1"><span class="n" style="background:var(--c1)">01</span>
+      <h3>Licensed and Insured</h3>
+      <p>Fully covered in Louisiana, on every residential and commercial job.</p></div>
+    <div class="tile k2"><span class="n" style="background:var(--c2)">02</span>
+      <h3>Everything in Writing</h3>
+      <p>Scope, preparation, product and price before we start. No verbal numbers.</p></div>
+    <div class="tile k3"><span class="n" style="background:var(--c3)">03</span>
+      <h3>Local Crews</h3>
+      <p>Painters working across the parishes, so you meet the people who will be in your home.</p></div>
+    <div class="tile k4"><span class="n" style="background:var(--c4)">04</span>
+      <h3>Homes and Businesses</h3>
+      <p>Interiors, exteriors, cabinets and decks, plus offices, gyms, schools and clinics.</p></div>
+    <div class="tile k5"><span class="n" style="background:var(--c5)">05</span>
+      <h3>Prep Before Paint</h3>
+      <p>Washing, repair and priming happen first. It decides whether the finish lasts.</p></div>
+    <div class="tile k6"><span class="n" style="background:var(--c6)">06</span>
+      <h3>We Clean Up</h3>
+      <p>Furniture covered, floors protected, and the space left tidy when the last coat is on.</p></div>
+  </div>
+  <p class="sec-cta center"><a class="btn btn-dark" href="#estimate">Get Your Free Estimate</a><a class="btn btn-out" href="tel:5043809862">Call 504-380-9862</a></p>
+</div></section>
+
+<!-- ============ 04 ABOUT — side head ============ -->
+<section data-anim="split" class="sec vivid v-gold"><div class="wrap">
+  <div class="about-split">
+    <div>
+      <p class="chip k4"><i></i> About</p>
+      <h2>Who Will Be Painting Your House?</h2>
+      <p>At Big Easy Painters, we take pride in providing top-notch residential painting
+         services in the vibrant city of New Orleans. Our team of skilled and experienced
+         painters is dedicated to transforming your home into a masterpiece, using
+         high-quality materials and industry-standard techniques.</p>
+      <p>Our mission is to exceed our customers' expectations by delivering exceptional
+         painting services with a focus on professionalism, attention to detail, and timely
+         completion. We strive to create long-lasting relationships with our clients based on
+         trust, reliability, and outstanding results.</p>
+      <p class="sec-cta"><a class="btn btn-primary" href="#estimate">Get Your Free Estimate</a><a class="btn btn-out" href="/about/">More About Us</a></p>
+    </div>
+    <div class="shot">
+      <img src="assets/experts-banner-1920x736.jpg"
+           alt="A Big Easy Painters painter at work on a property exterior"
+           width="1920" height="1440" loading="lazy">
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ 05 COMMERCIAL — centred head ============ -->
+<section data-anim="rowsL" class="sec vivid bg-photo"><div class="wrap">
+  <div class="head">
+    <p class="chip k2"><i></i> Commercial</p>
+    <h2>Do You Paint Commercial Properties in New Orleans?</h2>
+    <p class="lede">Yes. Offices, gyms, hospitals and schools, scheduled around your opening
+       hours or into term breaks so your doors stay open.</p>
+  </div>
+  <div class="clist">
+    <a class="crow" href="/commercial/office-painting/">
+      <span class="ic"><img src="assets/commercial-icon-01.png" alt="" width="38" height="38" loading="lazy"></span>
+      <span><h3>Office Painting</h3><p>Colour and finish chosen around your brand, applied after hours where needed.</p></span>
+      <span class="go">View →</span></a>
+    <a class="crow" href="/commercial/gym-painting/">
+      <span class="ic"><img src="assets/commercial-icon-02.png" alt="" width="38" height="38" loading="lazy"></span>
+      <span><h3>Gym Painting</h3><p>Hard-wearing coatings for high-traffic floors, walls and locker areas.</p></span>
+      <span class="go">View →</span></a>
+    <a class="crow" href="/commercial/hospital-painting/">
+      <span class="ic"><img src="assets/commercial-icon-03.png" alt="" width="38" height="38" loading="lazy"></span>
+      <span><h3>Hospital Painting</h3><p>Low-odour systems and calm palettes for clinical and patient-facing spaces.</p></span>
+      <span class="go">View →</span></a>
+    <a class="crow" href="/commercial/school-painting/">
+      <span class="ic"><img src="assets/commercial-icon-04.png" alt="" width="38" height="38" loading="lazy"></span>
+      <span><h3>School Painting</h3><p>Scheduled into term breaks so classrooms come back ready to use.</p></span>
+      <span class="go">View →</span></a>
+    <a class="crow" href="/commercial/pressure-washing/">
+      <span class="ic"><img src="assets/commercial-icon-05.png" alt="" width="38" height="38" loading="lazy"></span>
+      <span><h3>Commercial Pressure Washing</h3><p>Facades, walkways and service areas cleaned before any coating goes on.</p></span>
+      <span class="go">View →</span></a>
+    <a class="crow dark" href="/commercial/" style="background:#5B3EA1;border-color:#5B3EA1;color:#fff">
+      <span class="ic" style="background:rgba(255,255,255,.12);color:#fff;font:600 1.6rem/1 var(--display)">+</span>
+      <span><h3 style="color:#fff">Something Else?</h3><p style="color:#B7C0CB">Tell us the building and the timeline. We price it in writing.</p></span>
+      <span class="go" style="color:#fff">View →</span></a>
+  </div>
+</div></section>
+
+<!-- ============ 06 PROCESS — side head ============ -->
+<section data-anim="pop" class="sec vivid v-violet"><div class="wrap">
+  <div class="head-side">
+    <div>
+      <p class="chip k2"><i></i> Process</p>
+      <h2>How Does a Painting Project Work?</h2>
+      <p class="lede">Four steps: you book a visit, we walk the property, you get a written
+         estimate, then we paint and clean up. Nothing happens on your property without you
+         knowing it is coming.</p>
+      <p class="sec-cta"><a class="btn btn-primary" href="#estimate">Get Your Free Estimate</a><a class="btn btn-out" href="tel:5043809862">Call 504-380-9862</a></p>
+    </div>
+    <div class="tiles" style="grid-template-columns:repeat(2,1fr)">
+      <div class="tile k1"><span class="n" style="background:var(--c1)">01</span>
+        <h3>Book the Visit</h3><p>Call or send the form. We agree a time that works and confirm it.</p></div>
+      <div class="tile k2"><span class="n" style="background:var(--c2)">02</span>
+        <h3>Walk the Job</h3><p>We look at the actual surfaces and talk through colour.</p></div>
+      <div class="tile k3"><span class="n" style="background:var(--c3)">03</span>
+        <h3>Written Estimate</h3><p>Scope, prep, product and price, in writing. No verbal numbers.</p></div>
+      <div class="tile k6"><span class="n" style="background:var(--c6)">04</span>
+        <h3>Paint and Clean Up</h3><p>Crews protect the space and leave it tidy when the last coat is on.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ 07 REVIEWS — centred head ============ -->
+<section data-anim="deal" class="sec"><div class="wrap">
+  <div class="head">
+    <p class="chip k4"><i></i> Reviews</p>
+    <h2>What Do New Orleans Homeowners Say About Our Work?</h2>
+    <p class="lede">Homeowners across the parishes on interior painting, deck work and cabinet
+       refinishing.</p>
+  </div>
+  <div class="revs">
+    <div class="rev"><div class="stars" aria-label="5 out of 5">★★★★★</div>
+      <blockquote>Choosing Big Easy Painters as our painting contractor was easily the best decision we made for our renovation project.</blockquote>
+      <div class="who"><img src="assets/Tony-Coleman.jpg" alt="" width="44" height="44" loading="lazy"><span><b>Tony Coleman</b><span>Interior painting</span></span></div></div>
+    <div class="rev"><div class="stars" aria-label="5 out of 5">★★★★★</div>
+      <blockquote>They went above and beyond our expectations. They transformed our faded deck, making it look brand new.</blockquote>
+      <div class="who"><img src="assets/Sara-Evans.jpg" alt="" width="44" height="44" loading="lazy"><span><b>Sara Evans</b><span>Deck painting</span></span></div></div>
+    <div class="rev"><div class="stars" aria-label="5 out of 5">★★★★★</div>
+      <blockquote>We had our old kitchen cabinets painted and it is like we have a brand new kitchen now. The finish they achieved was amazing.</blockquote>
+      <div class="who"><img src="assets/David-Reid.jpg" alt="" width="44" height="44" loading="lazy"><span><b>David Reid</b><span>Cabinet painting</span></span></div></div>
+  </div>
+  <p class="sec-cta center"><a class="btn btn-primary" href="#estimate">Get Your Free Estimate</a><a class="btn btn-out" href="/testimonials/">Read All Reviews</a></p>
+</div></section>
+
+<!-- ============ 08 RECENT WORK — centred head, full-width gallery ============ -->
+<section data-anim="zoom" class="sec vivid v-green"><div class="wrap">
+  <div class="head">
+    <p class="chip k3"><i></i> Recent work</p>
+    <h2>Interiors We Paint Across Greater New Orleans</h2>
+    <p class="lede">Feature walls, trim, ceilings, stairwells and doors. These are the colour
+       and finish jobs we take on across New Orleans homes.</p>
+  </div>
+  <div class="gal">
+    <figure><img src="assets/work-03.jpg" width="1400" height="933" loading="lazy"
+      alt="A living room with a cobalt blue feature wall behind a white sofa, the adjoining wall left white"></figure>
+    <figure><img src="assets/work-05.jpg" width="1400" height="934" loading="lazy"
+      alt="An entrance hall painted sage green, with stained wood trim, a staircase and a kitchen beyond"></figure>
+    <figure><img src="assets/work-04.jpg" width="1400" height="933" loading="lazy"
+      alt="A blue living room wall meeting a painted white brick wall, with white and blue furnishings"></figure>
+    <figure><img src="assets/work-02.jpg" width="1400" height="800" loading="lazy"
+      alt="A living room with a teal plaster wall, exposed timber beams and a panelled wooden door"></figure>
+    <figure><img src="assets/work-01.jpg" width="1400" height="768" loading="lazy"
+      alt="A living room with an orange feature wall beside a grey wall, next to a curved staircase"></figure>
+    <figure><img src="assets/work-06.jpg" width="1400" height="786" loading="lazy"
+      alt="A living room with a blue feature wall, a grey wall and a timber-clad ceiling"></figure>
+  </div>
+  <p class="sec-cta center"><a class="btn btn-primary" href="#estimate">Get Your Free Estimate</a><a class="btn btn-out" href="tel:5043809862">Call 504-380-9862</a></p>
+</div></section>
+
+<!-- ============ 09 SERVICE AREAS — centred head ============ -->
+<section data-anim="chip" class="sec"><div class="wrap">
+  <div class="head">
+    <p class="chip k5"><i></i> Service areas</p>
+    <h2>Which Parishes and Cities Do We Serve?</h2>
+    <p class="lede">We cover New Orleans and nine surrounding parish cities. If we serve your
+       address, we can be there for the estimate and the price comes back in writing.</p>
+  </div>
+  <div class="areas-split">
+    <div>
+      <div class="area-grid">
+        <a href="/service-areas/">New Orleans</a>
+        <a href="/service-areas/metairie/">Metairie</a>
+        <a href="/service-areas/kenner/">Kenner</a>
+        <a href="/service-areas/covington/">Covington</a>
+        <a href="/service-areas/mandeville/">Mandeville</a>
+        <a href="/service-areas/madisonville/">Madisonville</a>
+        <a href="/service-areas/abita-springs/">Abita Springs</a>
+        <a href="/service-areas/hammond/">Hammond</a>
+        <a href="/service-areas/laplace/">LaPlace</a>
+        <a href="/service-areas/st-rose/">St Rose</a>
+      </div>
+      <p class="hoods">Inside New Orleans itself we work across the Garden District, Uptown,
+         Carrollton, Mid-City, Lakeview, Gentilly, Bywater, Marigny, Treme, the Irish Channel
+         and Algiers, on everything from Creole cottages and shotgun doubles to new-build and
+         commercial property.</p>
+      <p class="sec-cta"><a class="btn btn-primary" href="#estimate">Get Your Free Estimate</a><a class="btn btn-out" href="tel:5043809862">Call 504-380-9862</a></p>
+    </div>
+    <figure class="map">
+      <img src="assets/map-img.png" width="519" height="471" loading="lazy"
+           alt="Outline of Louisiana with markers on the parishes Big Easy Painters covers">
+      <figcaption>Where our crews work</figcaption>
+    </figure>
+  </div>
+</div></section>
+
+<!-- ============ 10 ADVICE — centred head ============ -->
+<section data-anim="deal" class="sec vivid v-blue"><div class="wrap">
+  <div class="head">
+    <p class="chip k6"><i></i> Advice</p>
+    <h2>Painting Advice for New Orleans Homes</h2>
+    <p class="lede">Colour choices, lead paint in older homes, and getting a surface ready
+       before the first coat.</p>
+  </div>
+  <div class="posts">
+    <a class="post" href="/choosing-paint-colors-for-a-historic-district-home-in-new-orleans-la/">
+      <span class="th"><img src="assets/historic-district-paint-colors-new-orleans-370x285.jpg" alt="A brightly painted historic New Orleans shotgun house" width="370" height="240" loading="lazy"></span>
+      <span class="bd"><h3>Choosing Paint Colors for a Historic District Home in New Orleans, LA</h3>
+        <span class="go">Read the article →</span></span></a>
+    <a class="post" href="/how-to-paint-brick-and-stucco-exteriors-in-new-orleans-la/">
+      <span class="th"><img src="assets/paint-brick-stucco-exteriors-new-orleans-370x285.jpg" alt="A red brick building exterior in New Orleans" width="370" height="240" loading="lazy"></span>
+      <span class="bd"><h3>How to Paint Brick and Stucco Exteriors in New Orleans, LA</h3>
+        <span class="go">Read the article →</span></span></a>
+    <a class="post" href="/how-to-remove-wallpaper-before-painting-in-new-orleans-la/">
+      <span class="th"><img src="assets/wallpaper-removal-before-painting-new-orleans-370x285.jpg" alt="Wallpaper being stripped from an interior wall before painting" width="370" height="240" loading="lazy"></span>
+      <span class="bd"><h3>How to Remove Wallpaper Before Painting in New Orleans, LA</h3>
+        <span class="go">Read the article →</span></span></a>
+  </div>
+  <p class="sec-cta center"><a class="btn btn-primary" href="#estimate">Get Your Free Estimate</a><a class="btn btn-out" href="/blog/">All Articles</a></p>
+</div></section>
+
+<!-- ============ 11 QUESTIONS — centred head ============ -->
+<section data-anim="rowsL" class="sec"><div class="wrap">
+  <div class="head">
+    <p class="chip k1"><i></i> Questions</p>
+    <h2>Painting Questions New Orleans Homeowners Ask</h2>
+    <p class="lede">What a free estimate covers, how long a job takes, and what happens with
+       lead paint in an older home.</p>
+  </div>
+  <div class="faq">
+    <details open><summary>How do I choose the right painting company in New Orleans?</summary>
+      <div class="ans"><p>Ask for proof of licence and insurance, a written scope rather than a verbal number, and the name of the crew who will actually be on site. A contractor who prices without walking the property is guessing.</p></div></details>
+    <details><summary>Is there a difference between residential and commercial painting?</summary>
+      <div class="ans"><p>Yes. Commercial work is scheduled around your operating hours and usually calls for harder-wearing coatings and more surface preparation. The colour conversation is shorter; the logistics conversation is longer.</p></div></details>
+    <details><summary>How can I prepare my property for painting services?</summary>
+      <div class="ans"><p>Clear small items off walls and surfaces, and let us know about pets, alarm codes and parking. We handle covering furniture, protecting floors and masking anything that stays put.</p></div></details>
+    <details><summary>How long does a typical painting project take?</summary>
+      <div class="ans"><p>It depends on square footage, surface condition and the weather. Your written estimate carries the expected number of days for your specific property, agreed before we start.</p></div></details>
+    <details><summary>Do you paint older and historic New Orleans homes?</summary>
+      <div class="ans"><p>We work on older properties across the parishes, including the historic districts. Homes built before 1978 may contain lead paint, and the <a href="https://www.epa.gov/lead/lead-renovation-repair-and-painting-program" rel="nofollow noopener" target="_blank">EPA Lead Renovation, Repair and Painting Rule</a> sets how painted surfaces in those homes must be disturbed. Tell us the age of the house when you book and we will cover it at the estimate.</p></div></details>
+    <details><summary>What does a free estimate actually include?</summary>
+      <div class="ans"><p>A walk of the property, a conversation about colour and finish, and a written document setting out preparation, products, scope and price. There is no charge and no obligation to book.</p></div></details>
+    <details><summary>How much does it cost to paint a house in New Orleans?</summary>
+      <div class="ans"><p>Cost depends on square footage, the condition of the surfaces, how many coats are needed and whether repairs come first. We do not quote over the phone, because a number given without seeing the property is a guess. The free walk-through produces a written price for your specific job.</p></div></details>
+    <details><summary>Do we need to move out while you paint?</summary>
+      <div class="ans"><p>For most interior work, no. We paint room by room, cover furniture and protect floors, and agree with you each day which areas are in use. Larger exterior projects rarely affect how you live in the house at all.</p></div></details>
+  </div>
+  <p class="sec-cta center"><a class="btn btn-dark" href="#estimate">Get Your Free Estimate</a><a class="btn btn-out" href="tel:5043809862">Call 504-380-9862</a></p>
+</div></section>
+
+<!-- ============ 12 FREE ESTIMATE ============ -->
+<section data-anim="split" class="sec vivid v-teal" id="estimate"><div class="wrap est">
+  <div class="est-col">
+    <p class="chip k5"><i></i> Free estimate</p>
+    <h2>Tell Us About the Job</h2>
+    <p class="lede">Send the form and we will call to arrange a walk-through. If you would
+       rather talk it through now, the phone is quicker.</p>
+    <div class="next">
+      <div><b>01</b><p>We call to agree a time that suits you, and confirm it before the visit.</p></div>
+      <div><b>02</b><p>We walk the property, look at the actual surfaces and talk through colour.</p></div>
+      <div><b>03</b><p>You get scope, preparation, product and price in writing, with no obligation.</p></div>
+    </div>
+    <p class="socials-label">Follow the work</p>
+    <ul class="socials">
+      <li><a href="https://www.facebook.com/BigEasyPainters" target="_blank" rel="noopener" aria-label="Big Easy Painters on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5V7c0-.7.3-1 1-1h1.5V3.5H14c-2.2 0-3.5 1.3-3.5 3.4V8.5H8.5V11h2V21H14V11h2.2l.3-2.5H14z"/></svg></a></li>
+      <li><a href="https://x.com/BigEasyPainters" target="_blank" rel="noopener" aria-label="Big Easy Painters on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 3h3l-6.6 7.5L21.8 21h-6l-4.7-6.1L5.7 21h-3l7-8L2.5 3h6.2l4.2 5.6L17.5 3zm-1.1 16.2h1.7L7.7 4.7H5.9l10.5 14.5z"/></svg></a></li>
+      <li><a href="https://www.linkedin.com/company/big-easy-painters/" target="_blank" rel="noopener" aria-label="Big Easy Painters on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.9 8.5H3.6V21h3.3V8.5zM5.2 3A1.9 1.9 0 105.2 6.9 1.9 1.9 0 005.2 3zM21 13.8c0-3.2-1.7-4.7-4-4.7-1.8 0-2.6 1-3.1 1.7V8.5H10.6c0 .9 0 12.5 0 12.5h3.3v-7c0-.3 0-.6.1-.8.3-.6.8-1.3 1.8-1.3 1.3 0 1.9.9 1.9 2.4V21H21v-7.2z"/></svg></a></li>
+      <li><a href="https://www.youtube.com/@BigEasyPainters" target="_blank" rel="noopener" aria-label="Big Easy Painters on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.2 7.4a2.7 2.7 0 00-1.9-1.9C18.6 5 12 5 12 5s-6.6 0-8.3.5A2.7 2.7 0 001.8 7.4 28 28 0 001.3 12c0 1.6.2 3.1.5 4.6a2.7 2.7 0 001.9 1.9C5.4 19 12 19 12 19s6.6 0 8.3-.5a2.7 2.7 0 001.9-1.9c.3-1.5.5-3 .5-4.6s-.2-3.1-.5-4.6zM9.9 15.2V8.8l5.6 3.2-5.6 3.2z"/></svg></a></li>
+    </ul>
+    <p class="serving">Serving New Orleans, Metairie, Kenner, Covington, Mandeville,
+       Madisonville, Abita Springs, Hammond, LaPlace and St Rose.</p>
+  </div>
+  <div class="est-form">
+    <div class="capbar">Request your free estimate</div>
+    <!-- PRESERVED: live LeadConnector form, unchanged -->
+    <iframe src="https://api.leadconnectorhq.com/widget/form/wUtU0GqpvIpcIfcgiKT8"
+            title="Request your free painting estimate" loading="lazy"></iframe>
+  </div>
+</div></section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <hr class="stripe" aria-hidden="true"><div class="wrap">
+  <div class="foot-grid">
+    <div>
+      <img src="assets/logo.png"
+           alt="Big Easy Painters" width="236" height="86" loading="lazy"
+           style="height:52px;width:auto;background:#fff;padding:8px 12px;border-radius:10px">
+      <p style="margin-top:18px;max-width:34ch">Licensed and insured painting contractor
+         serving Greater New Orleans, residential and commercial.</p>
+      <p><a href="tel:5043809862" style="font-weight:700;color:#fff;display:inline">504-380-9862</a><br>
+         Open 9:00 am – 6:00 pm</p>
+    <p class="socials-label">Follow the work</p>
+      <ul class="socials">
+      <li><a href="https://www.facebook.com/BigEasyPainters" target="_blank" rel="noopener" aria-label="Big Easy Painters on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8.5V7c0-.7.3-1 1-1h1.5V3.5H14c-2.2 0-3.5 1.3-3.5 3.4V8.5H8.5V11h2V21H14V11h2.2l.3-2.5H14z"/></svg></a></li>
+      <li><a href="https://x.com/BigEasyPainters" target="_blank" rel="noopener" aria-label="Big Easy Painters on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 3h3l-6.6 7.5L21.8 21h-6l-4.7-6.1L5.7 21h-3l7-8L2.5 3h6.2l4.2 5.6L17.5 3zm-1.1 16.2h1.7L7.7 4.7H5.9l10.5 14.5z"/></svg></a></li>
+      <li><a href="https://www.linkedin.com/company/big-easy-painters/" target="_blank" rel="noopener" aria-label="Big Easy Painters on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.9 8.5H3.6V21h3.3V8.5zM5.2 3A1.9 1.9 0 105.2 6.9 1.9 1.9 0 005.2 3zM21 13.8c0-3.2-1.7-4.7-4-4.7-1.8 0-2.6 1-3.1 1.7V8.5H10.6c0 .9 0 12.5 0 12.5h3.3v-7c0-.3 0-.6.1-.8.3-.6.8-1.3 1.8-1.3 1.3 0 1.9.9 1.9 2.4V21H21v-7.2z"/></svg></a></li>
+      <li><a href="https://www.youtube.com/@BigEasyPainters" target="_blank" rel="noopener" aria-label="Big Easy Painters on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.2 7.4a2.7 2.7 0 00-1.9-1.9C18.6 5 12 5 12 5s-6.6 0-8.3.5A2.7 2.7 0 001.8 7.4 28 28 0 001.3 12c0 1.6.2 3.1.5 4.6a2.7 2.7 0 001.9 1.9C5.4 19 12 19 12 19s6.6 0 8.3-.5a2.7 2.7 0 001.9-1.9c.3-1.5.5-3 .5-4.6s-.2-3.1-.5-4.6zM9.9 15.2V8.8l5.6 3.2-5.6 3.2z"/></svg></a></li>
+      </ul>
+    </div>
+    <div><h4>Residential</h4>
+      <a href="/residential/interior-home-painting/">Interior Home Painting</a>
+      <a href="/residential/exterior-home-painting/">Exterior Home Painting</a>
+      <a href="/residential/cabinet-painting/">Cabinet Painting</a>
+      <a href="/residential/deck-painting/">Deck Painting</a>
+      <a href="/residential/kitchen-remodel/">Kitchen Remodel</a>
+      <a href="/residential/pressure-washing/">Pressure Washing</a></div>
+    <div><h4>Commercial</h4>
+      <a href="/commercial/office-painting/">Office Painting</a>
+      <a href="/commercial/gym-painting/">Gym Painting</a>
+      <a href="/commercial/hospital-painting/">Hospital Painting</a>
+      <a href="/commercial/school-painting/">School Painting</a>
+      <a href="/commercial/pressure-washing/">Pressure Washing</a></div>
+    <div><h4>Company</h4>
+      <a href="/about/">About</a>
+      <a href="/service-areas/">Service Areas</a>
+      <a href="/testimonials/">Reviews</a>
+      <a href="/faqs/">FAQs</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact/">Contact</a></div>
+      <figure class="foot-map">
+      <iframe title="Map of the Greater New Orleans area Big Easy Painters covers"
+        src="https://maps.google.com/maps?q=New%20Orleans,%20Louisiana&z=10&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <figcaption>Serving Greater New Orleans and nine surrounding parish cities</figcaption>
+    </figure>
+  </div>
+  <div class="legal">
+    <span>&copy; 2026 Big Easy Painters. All rights reserved.</span>
+    <a href="/sitemap/" style="display:inline">Sitemap</a>
+  </div>
+</div></footer>
+
+<script>
+// hero paint reveal - the copy is uncovered in step with the roller.
+// Content is visible by default; the wipe is only armed once this script runs, and it is
+// disarmed on end, on error, on reduced motion, and by a hard timer.
+(function(){
+  var v = document.getElementById('heroVid');
+  var card = document.querySelector('.hero-card');
+  if(!v || !card) return;
+
+  var root = document.documentElement;
+  var done = false;
+  function finish(){
+    if(done) return;
+    done = true;
+    root.classList.remove('paint-anim');
+    card.style.removeProperty('--wipe');
+  }
+
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){
+    v.removeAttribute('autoplay');
+    v.pause();
+    return;                                  // copy stays plainly visible
+  }
+
+  root.classList.add('paint-anim');
+  card.style.setProperty('--wipe','100%');
+
+  v.addEventListener('timeupdate', function(){
+    if(done) return;
+    var d = v.duration;
+    if(!d) return;
+    // the copy finishes appearing a little before the roller leaves frame
+    var p = v.currentTime / (d * 0.82);
+    if(p > 1) p = 1;
+    card.style.setProperty('--wipe', ((1 - p) * 100).toFixed(1) + '%');
+    if(p >= 1) finish();
+  });
+
+  v.addEventListener('ended', finish);
+  v.addEventListener('error', finish);
+
+  // The failsafe has to outlast the clip, or it cuts the reveal short - a fixed 6s timer
+  // did exactly that against a 10.5s video. Key it off the real duration once known,
+  // and keep a generous fallback for the case where metadata never arrives.
+  var guard = setTimeout(finish, 15000);
+  v.addEventListener('loadedmetadata', function(){
+    clearTimeout(guard);
+    setTimeout(finish, (v.duration * 1000) + 2500);
+  });
+})();
+
+// The hero video kept decoding all the way down the page. Nobody can see it once the
+// hero has scrolled past, and a decoding video competes with the scroll for the main
+// thread - it pauses when it leaves view and resumes when it comes back.
+(function(){
+  try{
+    var v = document.getElementById('heroVid');
+    if(!v || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function(e){
+      if(e[0].isIntersecting){ if(v.paused) v.play().catch(function(){}); }
+      else if(!v.paused){ v.pause(); }
+    },{threshold:0.05}).observe(v);
+  }catch(err){}
+})();
+
+// mobile nav
+(function(){
+  var b=document.querySelector('.burger'), n=document.getElementById('mainnav');
+  b.addEventListener('click',function(){
+    var open=n.classList.toggle('open');
+    b.setAttribute('aria-expanded',open?'true':'false');
+  });
+})();
+
+// comparison slider
+(function(){
+  var c=document.getElementById('cmp'); if(!c) return;
+  var r=c.querySelector('input');
+  function set(){ c.style.setProperty('--pos', r.value + '%'); }
+  r.addEventListener('input',set); set();
+})();
+
+</script>
+
+<!-- ============ SCHEMA - one separate block per type, never combined ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HousePainter",
+  "name": "Big Easy Painters",
+  "url": "https://www.bigeasypainters.com/",
+  "logo": "assets/logo.png",
+  "image": "assets/home-banner.jpg",
+  "telephone": "+1-504-380-9862",
+  "description": "Licensed and insured painting contractor serving New Orleans and the surrounding parishes, residential and commercial.",
+  "areaServed": [
+    { "@type": "City", "name": "New Orleans", "addressRegion": "LA" },
+    { "@type": "City", "name": "Metairie", "addressRegion": "LA" },
+    { "@type": "City", "name": "Kenner", "addressRegion": "LA" },
+    { "@type": "City", "name": "Covington", "addressRegion": "LA" },
+    { "@type": "City", "name": "Mandeville", "addressRegion": "LA" },
+    { "@type": "City", "name": "Madisonville", "addressRegion": "LA" },
+    { "@type": "City", "name": "Abita Springs", "addressRegion": "LA" },
+    { "@type": "City", "name": "Hammond", "addressRegion": "LA" },
+    { "@type": "City", "name": "LaPlace", "addressRegion": "LA" },
+    { "@type": "City", "name": "St Rose", "addressRegion": "LA" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Painting services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Interior Home Painting", "url": "https://www.bigeasypainters.com/residential/interior-home-painting/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Exterior Home Painting", "url": "https://www.bigeasypainters.com/residential/exterior-home-painting/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cabinet Painting", "url": "https://www.bigeasypainters.com/residential/cabinet-painting/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Deck Painting", "url": "https://www.bigeasypainters.com/residential/deck-painting/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pressure Washing", "url": "https://www.bigeasypainters.com/residential/pressure-washing/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kitchen Remodel", "url": "https://www.bigeasypainters.com/residential/kitchen-remodel/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Office Painting", "url": "https://www.bigeasypainters.com/commercial/office-painting/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gym Painting", "url": "https://www.bigeasypainters.com/commercial/gym-painting/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hospital Painting", "url": "https://www.bigeasypainters.com/commercial/hospital-painting/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "School Painting", "url": "https://www.bigeasypainters.com/commercial/school-painting/" } }
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Big Easy Painters",
+  "url": "https://www.bigeasypainters.com/",
+  "publisher": { "@type": "Organization", "name": "Big Easy Painters" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bigeasypainters.com/" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How do I choose the right painting company in New Orleans?", "acceptedAnswer": { "@type": "Answer", "text": "Ask for proof of licence and insurance, a written scope rather than a verbal number, and the name of the crew who will actually be on site. A contractor who prices without walking the property is guessing." } },
+    { "@type": "Question", "name": "Is there a difference between residential and commercial painting?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Commercial work is scheduled around your operating hours and usually calls for harder-wearing coatings and more surface preparation. The colour conversation is shorter; the logistics conversation is longer." } },
+    { "@type": "Question", "name": "How can I prepare my property for painting services?", "acceptedAnswer": { "@type": "Answer", "text": "Clear small items off walls and surfaces, and let us know about pets, alarm codes and parking. We handle covering furniture, protecting floors and masking anything that stays put." } },
+    { "@type": "Question", "name": "How long does a typical painting project take?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on square footage, surface condition and the weather. Your written estimate carries the expected number of days for your specific property, agreed before we start." } },
+    { "@type": "Question", "name": "Do you paint older and historic New Orleans homes?", "acceptedAnswer": { "@type": "Answer", "text": "We work on older properties across the parishes, including the historic districts. Homes built before 1978 may contain lead paint, and the EPA Lead Renovation, Repair and Painting Rule sets how painted surfaces in those homes must be disturbed. Tell us the age of the house when you book and we will cover it at the estimate." } },
+    { "@type": "Question", "name": "What does a free estimate actually include?", "acceptedAnswer": { "@type": "Answer", "text": "A walk of the property, a conversation about colour and finish, and a written document setting out preparation, products, scope and price. There is no charge and no obligation to book." } },
+    { "@type": "Question", "name": "How much does it cost to paint a house in New Orleans?", "acceptedAnswer": { "@type": "Answer", "text": "Cost depends on square footage, the condition of the surfaces, how many coats are needed and whether repairs come first. We do not quote over the phone, because a number given without seeing the property is a guess. The free walk-through produces a written price for your specific job." } },
+    { "@type": "Question", "name": "Do we need to move out while you paint?", "acceptedAnswer": { "@type": "Answer", "text": "For most interior work, no. We paint room by room, cover furniture and protect floors, and agree with you each day which areas are in use. Larger exterior projects rarely affect how you live in the house at all." } }
+  ]
+}
+</script>
+
+
+<script>
+/* Scroll reveal. Fails open by construction: nothing in the stylesheet hides anything,
+   so the worst case here is a page with no animation, never a page with no content. */
+(function(){
+  try{
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if(!('IntersectionObserver' in window)) return;
+
+    // .statband is its own section class, so the first pass skipped it entirely
+    var secs = [].slice.call(document.querySelectorAll('section.sec, section.statband'));
+    var watch = [];
+
+    secs.forEach(function(sec){
+      // coloured bands get a roller pass in their own ground colour
+      if(/(^| )v-(teal|blue|violet|green|gold)( |$)/.test(sec.className)
+         || sec.classList.contains('bg-photo')){
+        sec.classList.add('rv-band');
+        watch.push(sec);
+      }
+
+      var anim = sec.getAttribute('data-anim') || 'card';
+
+      // section heading. On a split section the copy comes in from the left, so the head
+      // and the thing beside it move toward each other rather than both drifting up.
+      var head = sec.querySelector('.head, .head-side, .est-col, .about-split');
+      if(head){
+        var headMove = (anim === 'split') ? 'left' : 'up';
+        [].slice.call(head.children).filter(function(el){
+          return /^(P|H2|H3|DIV)$/.test(el.tagName);
+        }).slice(0,4).forEach(function(el,i){
+          el.setAttribute('data-rv', headMove);
+          el.style.setProperty('--d',(i*95)+'ms');
+          watch.push(el);
+        });
+      }
+
+      // card rows. Each section's own entrance, and its own rhythm: a chip row snaps at
+      // 45ms apart, a gallery breathes at 110ms. Capped at 8 so a ten-city row never crawls.
+      var MOVE = {fill:'fill', pop:'pop', deal:'deal', zoom:'zoom',
+                  rowsL:'row', chip:'chip', split:'right', alt:'alt', count:'card'};
+      var GAP  = {chip:45, rowsL:70, deal:130, zoom:110, pop:120, fill:95, split:90, alt:85};
+      // '.cities' and '.faqs' were guesses and matched nothing - the real containers are
+      // '.area-grid' and '.faq', which is why those two sections had no card motion.
+      ['.tiles','.cards','.clist','.revs','.posts','.gal','.area-grid','.faq','.stats']
+      .forEach(function(sel){
+        var row = sec.querySelector(sel);
+        if(!row) return;
+        var move = MOVE[anim] || 'card';
+        var gap  = GAP[anim] || 90;
+        [].slice.call(row.children).forEach(function(el,i){
+          // "alt" is the only one that varies per item: odd from the left, even from the
+          // right, so the six why-us tiles close in on the centre line.
+          var m = (move === 'alt') ? (i % 2 ? 'right' : 'left') : move;
+          // the blog cards deal the opposite way to the reviews, so the two card rows on
+          // the page do not read as the same shot twice
+          if(m === 'deal' && sec.querySelector('.posts')) m = 'dealR';
+          el.setAttribute('data-rv', m);
+          el.style.setProperty('--d',(Math.min(i,5)*gap)+'ms');
+          watch.push(el);
+        });
+      });
+
+      // the thing beside a split head comes in from the right, meeting the copy
+      var shot = sec.querySelector('.about-split .shot, .compare, .est-form, .areas-map');
+      if(shot){
+        shot.setAttribute('data-rv', anim === 'split' ? 'right' : 'img');
+        shot.style.setProperty('--d','120ms');
+        watch.push(shot);
+      }
+
+      // the stat figures roll up from zero. The final text is captured first and written
+      // back unconditionally at the end and on a timer, so a stalled counter can never
+      // leave "0" standing where "2.5k" belongs.
+      [].slice.call(sec.querySelectorAll('.stats b')).forEach(function(el,i){
+        var full = el.textContent.trim();
+        var num  = parseFloat(full.replace(/[^0-9.]/g,''));
+        if(isNaN(num)) return;
+        var pre  = full.slice(0, full.indexOf(full.replace(/[^0-9.]/g,'').charAt(0)));
+        var suf  = full.slice(pre.length + String(num).length);
+        var dec  = (String(num).split('.')[1]||'').length;
+        el.setAttribute('data-rv','num');
+        el.style.setProperty('--d',(i*90)+'ms');
+        el.setAttribute('data-count', full);
+        watch.push(el);
+        el._rvCount = function(){
+          var t0 = null, dur = 1100;
+          el.textContent = pre + (0).toFixed(dec) + suf;
+          function step(t){
+            if(t0===null) t0=t;
+            var k = Math.min((t-t0)/dur,1);
+            k = 1 - Math.pow(1-k,3);                     // ease-out
+            el.textContent = pre + (num*k).toFixed(dec) + suf;
+            if(k<1) requestAnimationFrame(step); else el.textContent = full;
+          }
+          requestAnimationFrame(step);
+          setTimeout(function(){ el.textContent = full; }, dur + 900);
+        };
+      });
+    });
+
+    if(!watch.length) return;
+
+    function clean(el){
+      el.classList.remove('rv-in');          // back to the plain, always-visible state
+    }
+
+    function play(el){
+      if(el.classList.contains('rv-band')){
+        // build the bar, let it run, then delete it. No bar survives its own stroke.
+        if(el.querySelector(':scope > .rv-wipe')) return;
+        var bar = document.createElement('i');
+        bar.className = 'rv-wipe';
+        bar.setAttribute('aria-hidden','true');
+        var ground = getComputedStyle(el).backgroundColor;
+        if(ground && ground !== 'rgba(0, 0, 0, 0)') bar.style.background = ground;
+        var kill = function(){ if(bar.parentNode) bar.parentNode.removeChild(bar); };
+        bar.addEventListener('animationend', kill);
+        el.insertBefore(bar, el.firstChild);
+        setTimeout(kill, 1400);              // stalled animation cannot leave it covering
+        return;
+      }
+      // stagger is a timed class add, not an animation-delay, so no element is ever
+      // parked in a from-state waiting for its turn
+      var d = parseInt(el.style.getPropertyValue('--d'),10) || 0;
+      setTimeout(function(){
+        el.classList.add('rv-in');
+        if(el._rvCount) el._rvCount();
+        el.addEventListener('animationend', function(){ clean(el); }, {once:true});
+      }, d);
+    }
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting) return;
+        io.unobserve(e.target);
+        play(e.target);
+      });
+    },{rootMargin:'0px 0px -6% 0px',threshold:0.01});
+
+    watch.forEach(function(el){ io.observe(el); });
+  }catch(err){ /* fail open - the page is already fully visible */ }
+})();
+</script>
+
+</body>
+</html>
