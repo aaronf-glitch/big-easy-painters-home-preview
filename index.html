@@ -54,7 +54,24 @@ h2{font-size:clamp(1.7rem,1.15rem + 1.9vw,2.65rem);font-weight:700}
 h3{font-size:1.1875rem;font-weight:600}
 p{margin:0 0 1rem}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
-.sec{padding:clamp(52px,5.4vw,88px) 0}
+.sec{padding:clamp(52px,5.4vw,88px) 0;position:relative}
+/* ---------- the roof stripe at every section join ----------
+   Ron liked it on the footer and asked for it on all of them. It is the logo's own roof
+   stripes, so it reads as brand rather than decoration. On the coloured bands the wave
+   clip would slice it apart, so there it sits just below the wave's deepest cut (the
+   polygon bottoms out at 23.3px) and rides the band instead of being eaten by it. */
+.sec::before{content:"";position:absolute;left:0;right:0;top:0;height:7px;z-index:2;
+  pointer-events:none;
+  background:linear-gradient(90deg,
+    #4A9BE8 0 16.66%, #F2415A 16.66% 33.32%, #FFC24D 33.32% 49.98%,
+    #2ED3B7 49.98% 66.64%, #9B7BE8 66.64% 83.3%, #79B57F 83.3% 100%)}
+.vivid::before{top:26px}
+/* On Levee Gold the #FFC24D segment sat on a #FEA301 ground and simply disappeared, and
+   the light tints either side of it went flat too - the same teal-on-teal trap the footer
+   stripe hit. The gold band takes the deep logo colours instead, which read on it. */
+.v-gold::before{background:linear-gradient(90deg,
+  #1B5FA8 0 16.66%, #B3111F 16.66% 33.32%, #1B2430 33.32% 49.98%,
+  #026B67 49.98% 66.64%, #4A3184 66.64% 83.3%, #35553A 83.3% 100%)}
 .soft{background:var(--soft)}
 .w1{background:var(--t1);--pw:3,131,126} .w2{background:var(--t2);--pw:36,119,199}
 .w3{background:var(--t3);--pw:233,15,38}  .w4{background:var(--t4);--pw:254,163,1}
@@ -771,70 +788,25 @@ footer.site .wrap{position:relative;z-index:1}
     url("assets/commercial-bg.jpg");
   background-size:cover;background-position:center 38%}
 
-/* ================= SCROLL REVEAL - "the roller pass" =========================
-   Built so it CANNOT hide content. The earlier reveal on this build shipped real copy at
-   opacity 0 twice (L-112), because the stylesheet held a hidden start state and relied on
-   script to undo it. This one has no hidden start state anywhere. Elements are plainly
-   visible in CSS; the observer only attaches a keyframe animation that runs FROM hidden
-   TO visible at the moment the element enters view, and the class is stripped again when
-   the animation ends. Script dead, observer dead, animation stalled - the page still
-   renders every word. Transform and opacity only, ease-out, no ease-in.
-   Durations: 460ms band wipe (moving on screen, 200-500ms), 300-340ms entrances. */
-/* Ron, twice: the first pass was "walang kwenta", this one was "sobrang OA". The middle
-   setting is here. Every section keeps its own DIRECTION, which is what carried the idea,
-   but the amplitude comes right down: travel roughly a quarter of what it was, scale and
-   rotation barely off true, no bounce in the easing, and shorter runs. It should register
-   as the page settling, not as things flying in. */
-@keyframes rvUp   {from{opacity:0;transform:translate3d(0,24px,0)}   to{opacity:1;transform:none}}
-@keyframes rvLeft {from{opacity:0;transform:translate3d(-34px,0,0)}  to{opacity:1;transform:none}}
-@keyframes rvRight{from{opacity:0;transform:translate3d(34px,0,0)}   to{opacity:1;transform:none}}
-@keyframes rvImg  {from{opacity:0;transform:scale(1.03)}             to{opacity:1;transform:none}}
-@keyframes rvNum  {from{opacity:0;transform:translate3d(0,14px,0)}   to{opacity:1;transform:none}}
-@keyframes rvFill {from{opacity:0;transform:translate3d(-30px,0,0)}  to{opacity:1;transform:none}}
-@keyframes rvPop  {from{opacity:0;transform:scale(.94) translate3d(0,12px,0)}
-                   to  {opacity:1;transform:none}}
-@keyframes rvDeal {from{opacity:0;transform:translate3d(0,26px,0) rotate(-1deg)}
-                   to  {opacity:1;transform:none}}
-@keyframes rvDealR{from{opacity:0;transform:translate3d(0,26px,0) rotate(1deg)}
-                   to  {opacity:1;transform:none}}
-@keyframes rvZoom {from{opacity:0;transform:scale(1.05)}             to{opacity:1;transform:none}}
-@keyframes rvRow  {from{opacity:0;transform:translate3d(-32px,0,0)}  to{opacity:1;transform:none}}
-@keyframes rvChip {from{opacity:0;transform:scale(.9)}               to{opacity:1;transform:none}}
+/* ================= SCROLL REVEAL =============================================
+   Ron, in order: "walang kwenta", then "sobrang OA", then "pabiglang napasok", then
+   "pangit pa din - smooth lang". So this is one move, used everywhere: a soft fade with a
+   small lift. No sideways entrances, no rotation, no scale, no roller bar sweeping across
+   the coloured bands. Thirteen different gestures was the thing that read as busy; one
+   quiet one does not compete with the page.
 
-/* Ron: "lahat pabiglang napasok." That was a real defect and it was mine. The stagger was
-   a setTimeout that added .rv-in later, so a card sat FULLY VISIBLE for its delay, then
-   blinked to opacity 0 and animated in. Visible, gone, back - which is exactly what he saw.
-   The delay lives in CSS again, with animation-fill-mode:backwards holding the from-state
-   through it, so an element goes straight from waiting to arriving with no flash. The
-   fail-open guarantee is kept a different way: script strips .rv-in once the run is over
-   (and on a timer regardless), and without that class the element has no animation and no
-   start state at all - it is just visible. */
-[data-rv].rv-in{animation:rvUp .56s cubic-bezier(.16,.68,.3,1) backwards;
+   It cannot hide content. The stylesheet holds no start state - an element is plainly
+   visible until the observer adds .rv-in, and the class is stripped again when the run
+   ends AND on a timer regardless, so with the class gone there is no animation and no
+   start state left, just the element. Transform and opacity only. */
+@keyframes rvIn{from{opacity:0;transform:translate3d(0,16px,0)}
+                to  {opacity:1;transform:none}}
+
+[data-rv].rv-in{animation:rvIn .62s cubic-bezier(.22,.68,.28,1) backwards;
   animation-delay:var(--d,0ms)}
-[data-rv].rv-in        {animation-name:rvUp}
-[data-rv="img"].rv-in{animation-name:rvImg;animation-duration:.72s}
-[data-rv="num"].rv-in{animation-name:rvNum;animation-duration:.56s}
-[data-rv="left"].rv-in{animation-name:rvLeft;animation-duration:.6s}
-[data-rv="right"].rv-in{animation-name:rvRight;animation-duration:.6s}
-[data-rv="fill"].rv-in{animation-name:rvFill;animation-duration:.58s}
-[data-rv="pop"].rv-in{animation-name:rvPop;animation-duration:.56s}
-[data-rv="deal"].rv-in{animation-name:rvDeal;animation-duration:.58s}
-[data-rv="dealR"].rv-in{animation-name:rvDealR;animation-duration:.58s}
-[data-rv="zoom"].rv-in{animation-name:rvZoom;animation-duration:.72s}
-[data-rv="row"].rv-in{animation-name:rvRow;animation-duration:.54s}
-[data-rv="chip"].rv-in{animation-name:rvChip;animation-duration:.46s}
-[data-rv="card"].rv-in{animation-name:rvUp;animation-duration:.56s}
-
-/* the wipe bar is created by script only when its section scrolls in, and deleted the
-   moment the stroke finishes - so it cannot sit over the content if anything goes wrong */
-.rv-band{position:relative;overflow:hidden}
-.rv-wipe{position:absolute;top:-2px;bottom:-2px;left:-12%;width:124%;z-index:3;
-  pointer-events:none;background:var(--rv-paint,#1B2430);
-  animation:rvWipe .5s cubic-bezier(.32,.72,.28,1) forwards;will-change:transform}
 
 @media (prefers-reduced-motion:reduce){
-  [data-rv].rv-in,.rv-wipe{animation:none!important}
-  .rv-wipe{display:none}
+  [data-rv].rv-in{animation:none!important}
 }
 </style>
 </head>
@@ -909,7 +881,7 @@ footer.site .wrap{position:relative;z-index:1}
 </section>
 
 <!-- ============ STATS (under the banner) ============ -->
-<section data-anim="count" class="statband"><div class="wrap">
+<section class="statband"><div class="wrap">
   <div class="stats">
     <div><b>2.5k</b><span>Projects completed successfully</span></div>
     <div><b>84+</b><span>Professional painters in the company</span></div>
@@ -918,7 +890,7 @@ footer.site .wrap{position:relative;z-index:1}
 </div></section>
 
 <!-- ============ 01 SERVICES — centred head ============ -->
-<section data-anim="fill" class="sec"><div class="wrap">
+<section class="sec"><div class="wrap">
   <div class="head">
     <p class="chip k2"><i></i> Services</p>
     <h2>What Painting Services Do We Offer in New Orleans?</h2>
@@ -978,7 +950,7 @@ footer.site .wrap{position:relative;z-index:1}
 </div>
 
 <!-- ============ 02 THE WORK — side head ============ -->
-<section data-anim="split" class="sec vivid v-teal"><div class="wrap">
+<section class="sec vivid v-teal"><div class="wrap">
   <div class="head-side">
     <div>
       <p class="chip k1"><i></i> The work</p>
@@ -1002,7 +974,7 @@ footer.site .wrap{position:relative;z-index:1}
 </div></section>
 
 <!-- ============ 03 WHY US — centred head ============ -->
-<section data-anim="alt" class="sec"><div class="wrap">
+<section class="sec"><div class="wrap">
   <div class="head">
     <p class="chip k3"><i></i> Why us</p>
     <h2>Why Do New Orleans Homeowners Call Us Back?</h2>
@@ -1033,7 +1005,7 @@ footer.site .wrap{position:relative;z-index:1}
 </div></section>
 
 <!-- ============ 04 ABOUT — side head ============ -->
-<section data-anim="split" class="sec vivid v-gold"><div class="wrap">
+<section class="sec vivid v-gold"><div class="wrap">
   <div class="about-split">
     <div>
       <p class="chip k4"><i></i> About</p>
@@ -1057,7 +1029,7 @@ footer.site .wrap{position:relative;z-index:1}
 </div></section>
 
 <!-- ============ 05 COMMERCIAL — centred head ============ -->
-<section data-anim="rowsL" class="sec vivid bg-photo"><div class="wrap">
+<section class="sec vivid bg-photo"><div class="wrap">
   <div class="head">
     <p class="chip k2"><i></i> Commercial</p>
     <h2>Do You Paint Commercial Properties in New Orleans?</h2>
@@ -1093,7 +1065,7 @@ footer.site .wrap{position:relative;z-index:1}
 </div></section>
 
 <!-- ============ 06 PROCESS — side head ============ -->
-<section data-anim="pop" class="sec vivid v-violet"><div class="wrap">
+<section class="sec vivid v-violet"><div class="wrap">
   <div class="head-side">
     <div>
       <p class="chip k2"><i></i> Process</p>
@@ -1117,7 +1089,7 @@ footer.site .wrap{position:relative;z-index:1}
 </div></section>
 
 <!-- ============ 07 REVIEWS — centred head ============ -->
-<section data-anim="deal" class="sec"><div class="wrap">
+<section class="sec"><div class="wrap">
   <div class="head">
     <p class="chip k4"><i></i> Reviews</p>
     <h2>What Do New Orleans Homeowners Say About Our Work?</h2>
@@ -1139,7 +1111,7 @@ footer.site .wrap{position:relative;z-index:1}
 </div></section>
 
 <!-- ============ 08 RECENT WORK — centred head, full-width gallery ============ -->
-<section data-anim="zoom" class="sec vivid v-green"><div class="wrap">
+<section class="sec vivid v-green"><div class="wrap">
   <div class="head">
     <p class="chip k3"><i></i> Recent work</p>
     <h2>Interiors We Paint Across Greater New Orleans</h2>
@@ -1164,7 +1136,7 @@ footer.site .wrap{position:relative;z-index:1}
 </div></section>
 
 <!-- ============ 09 SERVICE AREAS — centred head ============ -->
-<section data-anim="chip" class="sec"><div class="wrap">
+<section class="sec"><div class="wrap">
   <div class="head">
     <p class="chip k5"><i></i> Service areas</p>
     <h2>Which Parishes and Cities Do We Serve?</h2>
@@ -1200,7 +1172,7 @@ footer.site .wrap{position:relative;z-index:1}
 </div></section>
 
 <!-- ============ 10 ADVICE — centred head ============ -->
-<section data-anim="deal" class="sec vivid v-blue"><div class="wrap">
+<section class="sec vivid v-blue"><div class="wrap">
   <div class="head">
     <p class="chip k6"><i></i> Advice</p>
     <h2>Painting Advice for New Orleans Homes</h2>
@@ -1225,7 +1197,7 @@ footer.site .wrap{position:relative;z-index:1}
 </div></section>
 
 <!-- ============ 11 QUESTIONS — centred head ============ -->
-<section data-anim="rowsL" class="sec"><div class="wrap">
+<section class="sec"><div class="wrap">
   <div class="head">
     <p class="chip k1"><i></i> Questions</p>
     <h2>Painting Questions New Orleans Homeowners Ask</h2>
@@ -1254,7 +1226,7 @@ footer.site .wrap{position:relative;z-index:1}
 </div></section>
 
 <!-- ============ 12 FREE ESTIMATE ============ -->
-<section data-anim="split" class="sec vivid v-teal" id="estimate"><div class="wrap est">
+<section class="sec vivid v-teal" id="estimate"><div class="wrap est">
   <div class="est-col">
     <p class="chip k5"><i></i> Free estimate</p>
     <h2>Tell Us About the Job</h2>
@@ -1501,144 +1473,81 @@ footer.site .wrap{position:relative;z-index:1}
 
 
 <script>
-/* Scroll reveal. Fails open by construction: nothing in the stylesheet hides anything,
-   so the worst case here is a page with no animation, never a page with no content. */
+/* Scroll reveal. One entrance for everything. Fails open: nothing in the stylesheet hides
+   anything, so the worst case is a page with no animation, never a page with no content. */
 (function(){
   try{
     if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     if(!('IntersectionObserver' in window)) return;
 
-    // .statband is its own section class, so the first pass skipped it entirely
-    var secs = [].slice.call(document.querySelectorAll('section.sec, section.statband'));
     var watch = [];
 
-    secs.forEach(function(sec){
-      // coloured bands get a roller pass in their own ground colour
-      if(/(^| )v-(teal|blue|violet|green|gold)( |$)/.test(sec.className)
-         || sec.classList.contains('bg-photo')){
-        sec.classList.add('rv-band');
-        watch.push(sec);
-      }
+    function tag(el, delay){
+      if(el.hasAttribute('data-rv')) return;
+      el.setAttribute('data-rv','in');
+      el.style.setProperty('--d', delay + 'ms');
+      watch.push(el);
+    }
 
-      var anim = sec.getAttribute('data-anim') || 'card';
-
-      // section heading. On a split section the copy comes in from the left, so the head
-      // and the thing beside it move toward each other rather than both drifting up.
+    [].slice.call(document.querySelectorAll('section.sec, section.statband'))
+    .forEach(function(sec){
+      // the heading block: eyebrow, h2, lede
       var head = sec.querySelector('.head, .head-side, .est-col, .about-split');
       if(head){
-        var headMove = (anim === 'split') ? 'left' : 'up';
         [].slice.call(head.children).filter(function(el){
           return /^(P|H2|H3|DIV)$/.test(el.tagName);
-        }).slice(0,4).forEach(function(el,i){
-          el.setAttribute('data-rv', headMove);
-          el.style.setProperty('--d',(i*70)+'ms');
-          watch.push(el);
-        });
+        }).slice(0,4).forEach(function(el,i){ tag(el, i*60); });
       }
-
-      // card rows. Each section's own entrance, and its own rhythm: a chip row snaps at
-      // 45ms apart, a gallery breathes at 110ms. Capped at 8 so a ten-city row never crawls.
-      var MOVE = {fill:'fill', pop:'pop', deal:'deal', zoom:'zoom',
-                  rowsL:'row', chip:'chip', split:'right', alt:'alt', count:'card'};
-      var GAP  = {chip:42, rowsL:60, deal:80, zoom:75, pop:75, fill:70, split:65, alt:65};
-      // '.cities' and '.faqs' were guesses and matched nothing - the real containers are
-      // '.area-grid' and '.faq', which is why those two sections had no card motion.
+      // whatever sits beside a side head
+      var aside = sec.querySelector('.about-split .shot, .compare, .est-form, .areas-map');
+      if(aside) tag(aside, 60);
+      // card rows, capped at 6 so a long row never turns into a queue
       ['.tiles','.cards','.clist','.revs','.posts','.gal','.area-grid','.faq','.stats']
       .forEach(function(sel){
         var row = sec.querySelector(sel);
         if(!row) return;
-        var move = MOVE[anim] || 'card';
-        var gap  = GAP[anim] || 90;
-        [].slice.call(row.children).forEach(function(el,i){
-          // "alt" is the only one that varies per item: odd from the left, even from the
-          // right, so the six why-us tiles close in on the centre line.
-          var m = (move === 'alt') ? (i % 2 ? 'right' : 'left') : move;
-          // the blog cards deal the opposite way to the reviews, so the two card rows on
-          // the page do not read as the same shot twice
-          if(m === 'deal' && sec.querySelector('.posts')) m = 'dealR';
-          el.setAttribute('data-rv', m);
-          el.style.setProperty('--d',(Math.min(i,5)*gap)+'ms');
-          watch.push(el);
-        });
-      });
-
-      // the thing beside a split head comes in from the right, meeting the copy
-      var shot = sec.querySelector('.about-split .shot, .compare, .est-form, .areas-map');
-      if(shot){
-        shot.setAttribute('data-rv', anim === 'split' ? 'right' : 'img');
-        shot.style.setProperty('--d','60ms');
-        watch.push(shot);
-      }
-
-      // the stat figures roll up from zero. The final text is captured first and written
-      // back unconditionally at the end and on a timer, so a stalled counter can never
-      // leave "0" standing where "2.5k" belongs.
-      [].slice.call(sec.querySelectorAll('.stats b')).forEach(function(el,i){
-        var full = el.textContent.trim();
-        var num  = parseFloat(full.replace(/[^0-9.]/g,''));
-        if(isNaN(num)) return;
-        var pre  = full.slice(0, full.indexOf(full.replace(/[^0-9.]/g,'').charAt(0)));
-        var suf  = full.slice(pre.length + String(num).length);
-        var dec  = (String(num).split('.')[1]||'').length;
-        el.setAttribute('data-rv','num');
-        el.style.setProperty('--d',(i*45)+'ms');
-        el.setAttribute('data-count', full);
-        watch.push(el);
-        el._rvCount = function(){
-          var t0 = null, dur = 1100;
-          el.textContent = pre + (0).toFixed(dec) + suf;
-          function step(t){
-            if(t0===null) t0=t;
-            var k = Math.min((t-t0)/dur,1);
-            k = 1 - Math.pow(1-k,3);                     // ease-out
-            el.textContent = pre + (num*k).toFixed(dec) + suf;
-            if(k<1) requestAnimationFrame(step); else el.textContent = full;
-          }
-          requestAnimationFrame(step);
-          setTimeout(function(){ el.textContent = full; }, dur + 900);
-        };
+        [].slice.call(row.children).forEach(function(el,i){ tag(el, Math.min(i,6)*60); });
       });
     });
 
     if(!watch.length) return;
 
-    function clean(el){
-      el.classList.remove('rv-in');          // back to the plain, always-visible state
-    }
-
-    function play(el){
-      if(el.classList.contains('rv-band')){
-        // build the bar, let it run, then delete it. No bar survives its own stroke.
-        if(el.querySelector(':scope > .rv-wipe')) return;
-        var bar = document.createElement('i');
-        bar.className = 'rv-wipe';
-        bar.setAttribute('aria-hidden','true');
-        var ground = getComputedStyle(el).backgroundColor;
-        if(ground && ground !== 'rgba(0, 0, 0, 0)') bar.style.background = ground;
-        var kill = function(){ if(bar.parentNode) bar.parentNode.removeChild(bar); };
-        bar.addEventListener('animationend', kill);
-        el.insertBefore(bar, el.firstChild);
-        setTimeout(kill, 1400);              // stalled animation cannot leave it covering
-        return;
-      }
-      // The class goes on the moment the element intersects. The stagger is the CSS
-      // animation-delay, held by fill-mode:backwards, so the element never appears before
-      // its turn and never blinks out. Stripping .rv-in afterwards is what keeps this
-      // fail-open: with no class there is no animation and no start state, just the
-      // element as it normally renders. The timer runs whether animationend fires or not.
-      var d = parseInt(el.style.getPropertyValue('--d'),10) || 0;
-      el.classList.add('rv-in');
-      if(el._rvCount) setTimeout(function(){ el._rvCount(); }, d);
-      var done = function(){ clean(el); };
-      el.addEventListener('animationend', done, {once:true});
-      setTimeout(done, d + 1400);
-    }
+    // the stat figures still count up - Ron asked for that specifically. The final string
+    // is captured first and written back at the end and on a timer, so a stalled counter
+    // cannot leave a 0 standing where 2.5k belongs.
+    [].slice.call(document.querySelectorAll('.stats b')).forEach(function(el){
+      var full = el.textContent.trim();
+      var digits = full.replace(/[^0-9.]/g,'');
+      var num = parseFloat(digits);
+      if(isNaN(num) || !digits) return;
+      var pre = full.slice(0, full.indexOf(digits.charAt(0)));
+      var suf = full.slice(pre.length + digits.length);
+      var dec = (digits.split('.')[1] || '').length;
+      el._rvCount = function(){
+        var t0 = null, dur = 900;
+        function step(t){
+          if(t0 === null) t0 = t;
+          var k = Math.min((t - t0) / dur, 1);
+          k = 1 - Math.pow(1 - k, 3);
+          el.textContent = pre + (num * k).toFixed(dec) + suf;
+          if(k < 1) requestAnimationFrame(step); else el.textContent = full;
+        }
+        requestAnimationFrame(step);
+        setTimeout(function(){ el.textContent = full; }, dur + 900);
+      };
+    });
 
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
         if(!e.isIntersecting) return;
         io.unobserve(e.target);
-        play(e.target);
+        var el = e.target;
+        var d = parseInt(el.style.getPropertyValue('--d'), 10) || 0;
+        el.classList.add('rv-in');
+        if(el._rvCount) setTimeout(function(){ el._rvCount(); }, d);
+        var done = function(){ el.classList.remove('rv-in'); };
+        el.addEventListener('animationend', done, {once:true});
+        setTimeout(done, d + 1500);          // stripped whether the animation ran or not
       });
     },{rootMargin:'0px 0px -4% 0px',threshold:0});
 
