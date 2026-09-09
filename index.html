@@ -65,13 +65,10 @@ p{margin:0 0 1rem}
   background:linear-gradient(90deg,
     #4A9BE8 0 16.66%, #F2415A 16.66% 33.32%, #FFC24D 33.32% 49.98%,
     #2ED3B7 49.98% 66.64%, #9B7BE8 66.64% 83.3%, #79B57F 83.3% 100%)}
-.vivid::before{top:26px}
-/* On Levee Gold the #FFC24D segment sat on a #FEA301 ground and simply disappeared, and
-   the light tints either side of it went flat too - the same teal-on-teal trap the footer
-   stripe hit. The gold band takes the deep logo colours instead, which read on it. */
-.v-gold::before{background:linear-gradient(90deg,
-  #1B5FA8 0 16.66%, #B3111F 16.66% 33.32%, #1B2430 33.32% 49.98%,
-  #026B67 49.98% 66.64%, #4A3184 66.64% 83.3%, #35553A 83.3% 100%)}
+/* Not on the coloured bands. Their top edge is a wave, so a straight stripe sat under a
+   curve with a gap of ground between the two and read as a stray line rather than an edge.
+   The stripe only goes where the join is actually straight. */
+.vivid::before{display:none}
 .soft{background:var(--soft)}
 .w1{background:var(--t1);--pw:3,131,126} .w2{background:var(--t2);--pw:36,119,199}
 .w3{background:var(--t3);--pw:233,15,38}  .w4{background:var(--t4);--pw:254,163,1}
