@@ -785,37 +785,45 @@ footer.site .wrap{position:relative;z-index:1}
    but the amplitude comes right down: travel roughly a quarter of what it was, scale and
    rotation barely off true, no bounce in the easing, and shorter runs. It should register
    as the page settling, not as things flying in. */
-@keyframes rvUp   {from{opacity:0;transform:translate3d(0,18px,0)}   to{opacity:1;transform:none}}
-@keyframes rvLeft {from{opacity:0;transform:translate3d(-26px,0,0)}  to{opacity:1;transform:none}}
-@keyframes rvRight{from{opacity:0;transform:translate3d(26px,0,0)}   to{opacity:1;transform:none}}
+@keyframes rvUp   {from{opacity:0;transform:translate3d(0,24px,0)}   to{opacity:1;transform:none}}
+@keyframes rvLeft {from{opacity:0;transform:translate3d(-34px,0,0)}  to{opacity:1;transform:none}}
+@keyframes rvRight{from{opacity:0;transform:translate3d(34px,0,0)}   to{opacity:1;transform:none}}
 @keyframes rvImg  {from{opacity:0;transform:scale(1.03)}             to{opacity:1;transform:none}}
 @keyframes rvNum  {from{opacity:0;transform:translate3d(0,14px,0)}   to{opacity:1;transform:none}}
-@keyframes rvFill {from{opacity:0;transform:translate3d(-22px,0,0)}  to{opacity:1;transform:none}}
+@keyframes rvFill {from{opacity:0;transform:translate3d(-30px,0,0)}  to{opacity:1;transform:none}}
 @keyframes rvPop  {from{opacity:0;transform:scale(.94) translate3d(0,12px,0)}
                    to  {opacity:1;transform:none}}
-@keyframes rvDeal {from{opacity:0;transform:translate3d(0,20px,0) rotate(-1deg)}
+@keyframes rvDeal {from{opacity:0;transform:translate3d(0,26px,0) rotate(-1deg)}
                    to  {opacity:1;transform:none}}
-@keyframes rvDealR{from{opacity:0;transform:translate3d(0,20px,0) rotate(1deg)}
+@keyframes rvDealR{from{opacity:0;transform:translate3d(0,26px,0) rotate(1deg)}
                    to  {opacity:1;transform:none}}
 @keyframes rvZoom {from{opacity:0;transform:scale(1.05)}             to{opacity:1;transform:none}}
-@keyframes rvRow  {from{opacity:0;transform:translate3d(-24px,0,0)}  to{opacity:1;transform:none}}
+@keyframes rvRow  {from{opacity:0;transform:translate3d(-32px,0,0)}  to{opacity:1;transform:none}}
 @keyframes rvChip {from{opacity:0;transform:scale(.9)}               to{opacity:1;transform:none}}
 
-/* one gentle ease-out everywhere. The overshoot curves are gone: a bounce on thirteen
-   sections is what made it read as too much. */
-[data-rv].rv-in        {animation:rvUp .34s cubic-bezier(.22,.61,.36,1)}
-[data-rv="img"].rv-in  {animation:rvImg .42s cubic-bezier(.22,.61,.36,1)}
-[data-rv="num"].rv-in  {animation:rvNum .34s cubic-bezier(.22,.61,.36,1)}
-[data-rv="left"].rv-in {animation:rvLeft .36s cubic-bezier(.22,.61,.36,1)}
-[data-rv="right"].rv-in{animation:rvRight .36s cubic-bezier(.22,.61,.36,1)}
-[data-rv="fill"].rv-in {animation:rvFill .34s cubic-bezier(.22,.61,.36,1)}
-[data-rv="pop"].rv-in  {animation:rvPop .34s cubic-bezier(.22,.61,.36,1)}
-[data-rv="deal"].rv-in {animation:rvDeal .34s cubic-bezier(.22,.61,.36,1)}
-[data-rv="dealR"].rv-in{animation:rvDealR .34s cubic-bezier(.22,.61,.36,1)}
-[data-rv="zoom"].rv-in {animation:rvZoom .42s cubic-bezier(.22,.61,.36,1)}
-[data-rv="row"].rv-in  {animation:rvRow .32s cubic-bezier(.22,.61,.36,1)}
-[data-rv="chip"].rv-in {animation:rvChip .28s cubic-bezier(.22,.61,.36,1)}
-[data-rv="card"].rv-in {animation:rvUp .34s cubic-bezier(.22,.61,.36,1)}
+/* Ron: "lahat pabiglang napasok." That was a real defect and it was mine. The stagger was
+   a setTimeout that added .rv-in later, so a card sat FULLY VISIBLE for its delay, then
+   blinked to opacity 0 and animated in. Visible, gone, back - which is exactly what he saw.
+   The delay lives in CSS again, with animation-fill-mode:backwards holding the from-state
+   through it, so an element goes straight from waiting to arriving with no flash. The
+   fail-open guarantee is kept a different way: script strips .rv-in once the run is over
+   (and on a timer regardless), and without that class the element has no animation and no
+   start state at all - it is just visible. */
+[data-rv].rv-in{animation:rvUp .56s cubic-bezier(.16,.68,.3,1) backwards;
+  animation-delay:var(--d,0ms)}
+[data-rv].rv-in        {animation-name:rvUp}
+[data-rv="img"].rv-in{animation-name:rvImg;animation-duration:.72s}
+[data-rv="num"].rv-in{animation-name:rvNum;animation-duration:.56s}
+[data-rv="left"].rv-in{animation-name:rvLeft;animation-duration:.6s}
+[data-rv="right"].rv-in{animation-name:rvRight;animation-duration:.6s}
+[data-rv="fill"].rv-in{animation-name:rvFill;animation-duration:.58s}
+[data-rv="pop"].rv-in{animation-name:rvPop;animation-duration:.56s}
+[data-rv="deal"].rv-in{animation-name:rvDeal;animation-duration:.58s}
+[data-rv="dealR"].rv-in{animation-name:rvDealR;animation-duration:.58s}
+[data-rv="zoom"].rv-in{animation-name:rvZoom;animation-duration:.72s}
+[data-rv="row"].rv-in{animation-name:rvRow;animation-duration:.54s}
+[data-rv="chip"].rv-in{animation-name:rvChip;animation-duration:.46s}
+[data-rv="card"].rv-in{animation-name:rvUp;animation-duration:.56s}
 
 /* the wipe bar is created by script only when its section scrolls in, and deleted the
    moment the stroke finishes - so it cannot sit over the content if anything goes wrong */
@@ -1523,7 +1531,7 @@ footer.site .wrap{position:relative;z-index:1}
           return /^(P|H2|H3|DIV)$/.test(el.tagName);
         }).slice(0,4).forEach(function(el,i){
           el.setAttribute('data-rv', headMove);
-          el.style.setProperty('--d',(i*45)+'ms');
+          el.style.setProperty('--d',(i*70)+'ms');
           watch.push(el);
         });
       }
@@ -1532,7 +1540,7 @@ footer.site .wrap{position:relative;z-index:1}
       // 45ms apart, a gallery breathes at 110ms. Capped at 8 so a ten-city row never crawls.
       var MOVE = {fill:'fill', pop:'pop', deal:'deal', zoom:'zoom',
                   rowsL:'row', chip:'chip', split:'right', alt:'alt', count:'card'};
-      var GAP  = {chip:28, rowsL:42, deal:60, zoom:55, pop:55, fill:50, split:45, alt:45};
+      var GAP  = {chip:42, rowsL:60, deal:80, zoom:75, pop:75, fill:70, split:65, alt:65};
       // '.cities' and '.faqs' were guesses and matched nothing - the real containers are
       // '.area-grid' and '.faq', which is why those two sections had no card motion.
       ['.tiles','.cards','.clist','.revs','.posts','.gal','.area-grid','.faq','.stats']
@@ -1613,14 +1621,17 @@ footer.site .wrap{position:relative;z-index:1}
         setTimeout(kill, 1400);              // stalled animation cannot leave it covering
         return;
       }
-      // stagger is a timed class add, not an animation-delay, so no element is ever
-      // parked in a from-state waiting for its turn
+      // The class goes on the moment the element intersects. The stagger is the CSS
+      // animation-delay, held by fill-mode:backwards, so the element never appears before
+      // its turn and never blinks out. Stripping .rv-in afterwards is what keeps this
+      // fail-open: with no class there is no animation and no start state, just the
+      // element as it normally renders. The timer runs whether animationend fires or not.
       var d = parseInt(el.style.getPropertyValue('--d'),10) || 0;
-      setTimeout(function(){
-        el.classList.add('rv-in');
-        if(el._rvCount) el._rvCount();
-        el.addEventListener('animationend', function(){ clean(el); }, {once:true});
-      }, d);
+      el.classList.add('rv-in');
+      if(el._rvCount) setTimeout(function(){ el._rvCount(); }, d);
+      var done = function(){ clean(el); };
+      el.addEventListener('animationend', done, {once:true});
+      setTimeout(done, d + 1400);
     }
 
     var io = new IntersectionObserver(function(entries){
@@ -1629,7 +1640,7 @@ footer.site .wrap{position:relative;z-index:1}
         io.unobserve(e.target);
         play(e.target);
       });
-    },{rootMargin:'0px 0px -6% 0px',threshold:0.01});
+    },{rootMargin:'0px 0px -4% 0px',threshold:0});
 
     watch.forEach(function(el){ io.observe(el); });
   }catch(err){ /* fail open - the page is already fully visible */ }
