@@ -780,58 +780,49 @@ footer.site .wrap{position:relative;z-index:1}
    the animation ends. Script dead, observer dead, animation stalled - the page still
    renders every word. Transform and opacity only, ease-out, no ease-in.
    Durations: 460ms band wipe (moving on screen, 200-500ms), 300-340ms entrances. */
-/* Ron: "lahat ng sections iisa animation?" - it was, and it read as wallpaper. Every
-   section now carries its own entrance, chosen for what that section IS, and declared in
-   the markup as data-anim so the intent is readable from the HTML rather than buried in
-   script. Still transform, opacity and clip-path only; still no fill-mode anywhere, so
-   none of these can leave an element stranded. */
-@keyframes rvUp   {from{opacity:0;transform:translate3d(0,56px,0)}   to{opacity:1;transform:none}}
-@keyframes rvLeft {from{opacity:0;transform:translate3d(-84px,0,0)}  to{opacity:1;transform:none}}
-@keyframes rvRight{from{opacity:0;transform:translate3d(84px,0,0)}   to{opacity:1;transform:none}}
-@keyframes rvImg  {from{opacity:0;transform:scale(1.12)}             to{opacity:1;transform:none}}
-@keyframes rvNum  {from{opacity:0;transform:translate3d(0,26px,0) scale(.78)} to{opacity:1;transform:none}}
+/* Ron, twice: the first pass was "walang kwenta", this one was "sobrang OA". The middle
+   setting is here. Every section keeps its own DIRECTION, which is what carried the idea,
+   but the amplitude comes right down: travel roughly a quarter of what it was, scale and
+   rotation barely off true, no bounce in the easing, and shorter runs. It should register
+   as the page settling, not as things flying in. */
+@keyframes rvUp   {from{opacity:0;transform:translate3d(0,18px,0)}   to{opacity:1;transform:none}}
+@keyframes rvLeft {from{opacity:0;transform:translate3d(-26px,0,0)}  to{opacity:1;transform:none}}
+@keyframes rvRight{from{opacity:0;transform:translate3d(26px,0,0)}   to{opacity:1;transform:none}}
+@keyframes rvImg  {from{opacity:0;transform:scale(1.03)}             to{opacity:1;transform:none}}
+@keyframes rvNum  {from{opacity:0;transform:translate3d(0,14px,0)}   to{opacity:1;transform:none}}
+@keyframes rvFill {from{opacity:0;transform:translate3d(-22px,0,0)}  to{opacity:1;transform:none}}
+@keyframes rvPop  {from{opacity:0;transform:scale(.94) translate3d(0,12px,0)}
+                   to  {opacity:1;transform:none}}
+@keyframes rvDeal {from{opacity:0;transform:translate3d(0,20px,0) rotate(-1deg)}
+                   to  {opacity:1;transform:none}}
+@keyframes rvDealR{from{opacity:0;transform:translate3d(0,20px,0) rotate(1deg)}
+                   to  {opacity:1;transform:none}}
+@keyframes rvZoom {from{opacity:0;transform:scale(1.05)}             to{opacity:1;transform:none}}
+@keyframes rvRow  {from{opacity:0;transform:translate3d(-24px,0,0)}  to{opacity:1;transform:none}}
+@keyframes rvChip {from{opacity:0;transform:scale(.9)}               to{opacity:1;transform:none}}
 
-/* services - the tile is laid down left to right. This was a clip-path reveal, which is
-   NOT compositor-accelerated: six cards repainting themselves and their shadows every
-   frame is exactly the kind of thing that makes a page feel heavy. Same direction, done
-   with transform and opacity, which the compositor handles without touching paint. */
-@keyframes rvFill {from{opacity:0;transform:translate3d(-46px,0,0) scaleX(.93)}
-                   to  {opacity:1;transform:none}}
-/* process - the numbered step arrives small and settles */
-@keyframes rvPop  {from{opacity:0;transform:scale(.62) translate3d(0,30px,0)}
-                   to  {opacity:1;transform:none}}
-/* reviews and blog cards - dealt onto the table */
-@keyframes rvDeal {from{opacity:0;transform:translate3d(0,74px,0) rotate(-4.5deg)}
-                   to  {opacity:1;transform:none}}
-@keyframes rvDealR{from{opacity:0;transform:translate3d(0,74px,0) rotate(4.5deg)}
-                   to  {opacity:1;transform:none}}
-/* gallery - the photograph pushes in from oversize */
-@keyframes rvZoom {from{opacity:0;transform:scale(1.22)}             to{opacity:1;transform:none}}
-/* commercial rows and FAQ rows - written in from the left, one after another */
-@keyframes rvRow  {from{opacity:0;transform:translate3d(-64px,0,0)}  to{opacity:1;transform:none}}
-/* city chips - snap, with a small overshoot */
-@keyframes rvChip {from{opacity:0;transform:scale(.5)}               to{opacity:1;transform:none}}
-
-[data-rv].rv-in{animation:rvUp .52s cubic-bezier(.18,.84,.34,1.06)}
-[data-rv="img"].rv-in  {animation:rvImg .72s cubic-bezier(.22,.61,.36,1)}
-[data-rv="num"].rv-in  {animation:rvNum .6s cubic-bezier(.18,.84,.34,1.06)}
-[data-rv="left"].rv-in {animation:rvLeft .62s cubic-bezier(.18,.84,.34,1.04)}
-[data-rv="right"].rv-in{animation:rvRight .62s cubic-bezier(.18,.84,.34,1.04)}
-[data-rv="fill"].rv-in {animation:rvFill .56s cubic-bezier(.2,.82,.32,1.03);transform-origin:left center}
-[data-rv="pop"].rv-in  {animation:rvPop .58s cubic-bezier(.16,.9,.3,1.12)}
-[data-rv="deal"].rv-in {animation:rvDeal .6s cubic-bezier(.18,.84,.34,1.05)}
-[data-rv="dealR"].rv-in{animation:rvDealR .6s cubic-bezier(.18,.84,.34,1.05)}
-[data-rv="zoom"].rv-in {animation:rvZoom .74s cubic-bezier(.22,.61,.36,1)}
-[data-rv="row"].rv-in  {animation:rvRow .5s cubic-bezier(.2,.8,.3,1)}
-[data-rv="chip"].rv-in {animation:rvChip .42s cubic-bezier(.16,.9,.3,1.3)}
-[data-rv="card"].rv-in {animation:rvUp .56s cubic-bezier(.18,.84,.34,1.06)}
+/* one gentle ease-out everywhere. The overshoot curves are gone: a bounce on thirteen
+   sections is what made it read as too much. */
+[data-rv].rv-in        {animation:rvUp .34s cubic-bezier(.22,.61,.36,1)}
+[data-rv="img"].rv-in  {animation:rvImg .42s cubic-bezier(.22,.61,.36,1)}
+[data-rv="num"].rv-in  {animation:rvNum .34s cubic-bezier(.22,.61,.36,1)}
+[data-rv="left"].rv-in {animation:rvLeft .36s cubic-bezier(.22,.61,.36,1)}
+[data-rv="right"].rv-in{animation:rvRight .36s cubic-bezier(.22,.61,.36,1)}
+[data-rv="fill"].rv-in {animation:rvFill .34s cubic-bezier(.22,.61,.36,1)}
+[data-rv="pop"].rv-in  {animation:rvPop .34s cubic-bezier(.22,.61,.36,1)}
+[data-rv="deal"].rv-in {animation:rvDeal .34s cubic-bezier(.22,.61,.36,1)}
+[data-rv="dealR"].rv-in{animation:rvDealR .34s cubic-bezier(.22,.61,.36,1)}
+[data-rv="zoom"].rv-in {animation:rvZoom .42s cubic-bezier(.22,.61,.36,1)}
+[data-rv="row"].rv-in  {animation:rvRow .32s cubic-bezier(.22,.61,.36,1)}
+[data-rv="chip"].rv-in {animation:rvChip .28s cubic-bezier(.22,.61,.36,1)}
+[data-rv="card"].rv-in {animation:rvUp .34s cubic-bezier(.22,.61,.36,1)}
 
 /* the wipe bar is created by script only when its section scrolls in, and deleted the
    moment the stroke finishes - so it cannot sit over the content if anything goes wrong */
 .rv-band{position:relative;overflow:hidden}
 .rv-wipe{position:absolute;top:-2px;bottom:-2px;left:-12%;width:124%;z-index:3;
   pointer-events:none;background:var(--rv-paint,#1B2430);
-  animation:rvWipe .74s cubic-bezier(.32,.72,.28,1) forwards;will-change:transform}
+  animation:rvWipe .5s cubic-bezier(.32,.72,.28,1) forwards;will-change:transform}
 
 @media (prefers-reduced-motion:reduce){
   [data-rv].rv-in,.rv-wipe{animation:none!important}
@@ -1532,7 +1523,7 @@ footer.site .wrap{position:relative;z-index:1}
           return /^(P|H2|H3|DIV)$/.test(el.tagName);
         }).slice(0,4).forEach(function(el,i){
           el.setAttribute('data-rv', headMove);
-          el.style.setProperty('--d',(i*95)+'ms');
+          el.style.setProperty('--d',(i*45)+'ms');
           watch.push(el);
         });
       }
@@ -1541,7 +1532,7 @@ footer.site .wrap{position:relative;z-index:1}
       // 45ms apart, a gallery breathes at 110ms. Capped at 8 so a ten-city row never crawls.
       var MOVE = {fill:'fill', pop:'pop', deal:'deal', zoom:'zoom',
                   rowsL:'row', chip:'chip', split:'right', alt:'alt', count:'card'};
-      var GAP  = {chip:45, rowsL:70, deal:130, zoom:110, pop:120, fill:95, split:90, alt:85};
+      var GAP  = {chip:28, rowsL:42, deal:60, zoom:55, pop:55, fill:50, split:45, alt:45};
       // '.cities' and '.faqs' were guesses and matched nothing - the real containers are
       // '.area-grid' and '.faq', which is why those two sections had no card motion.
       ['.tiles','.cards','.clist','.revs','.posts','.gal','.area-grid','.faq','.stats']
@@ -1567,7 +1558,7 @@ footer.site .wrap{position:relative;z-index:1}
       var shot = sec.querySelector('.about-split .shot, .compare, .est-form, .areas-map');
       if(shot){
         shot.setAttribute('data-rv', anim === 'split' ? 'right' : 'img');
-        shot.style.setProperty('--d','120ms');
+        shot.style.setProperty('--d','60ms');
         watch.push(shot);
       }
 
@@ -1582,7 +1573,7 @@ footer.site .wrap{position:relative;z-index:1}
         var suf  = full.slice(pre.length + String(num).length);
         var dec  = (String(num).split('.')[1]||'').length;
         el.setAttribute('data-rv','num');
-        el.style.setProperty('--d',(i*90)+'ms');
+        el.style.setProperty('--d',(i*45)+'ms');
         el.setAttribute('data-count', full);
         watch.push(el);
         el._rvCount = function(){
